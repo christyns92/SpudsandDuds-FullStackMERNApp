@@ -16,7 +16,7 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_REVIEWS = gql`
-  query getThoughts {
+  query getReviews {
     reviews {
       _id
       reviewText
@@ -27,7 +27,7 @@ export const QUERY_REVIEWS = gql`
 `;
 
 export const QUERY_SINGLE_REVIEW = gql`
-  query getSingleThought($reviewId: ID!) {
+  query getSingleReview($reviewId: ID!) {
     review(reviewId: $reviewId) {
       _id
       reviewText

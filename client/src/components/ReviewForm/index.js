@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_THOUGHT } from '../../utils/mutations';
-import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
+import { ADD_REVIEW } from '../../utils/mutations';
+import { QUERY_REVIEWS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
@@ -12,13 +12,13 @@ const ReviewForm = () => {
 
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addReview, { error }] = useMutation(ADD_THOUGHT, {
+  const [addReview, { error }] = useMutation(ADD_REVIEW, {
     update(cache, { data: { addReview } }) {
       try {
-        const { reviews } = cache.readQuery({ query: QUERY_THOUGHTS });
+        const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
 
         cache.writeQuery({
-          query: QUERY_THOUGHTS,
+          query: QUERY_REVIEWS,
           data: { reviews: [addReview, ...reviews] },
         });
       } catch (e) {

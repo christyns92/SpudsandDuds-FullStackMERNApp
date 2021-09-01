@@ -4,10 +4,10 @@ import { useQuery } from '@apollo/client';
 import ReviewList from '../components/ReviewList';
 import ReviewForm from '../components/ReviewForm';
 
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_REVIEWS } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const { loading, data } = useQuery(QUERY_REVIEWS);
   const reviews = data?.reviews || [];
 
   return (
