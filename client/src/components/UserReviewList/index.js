@@ -51,9 +51,6 @@ const UserReviewList = ({
         ))}
     </div>
   );
-
-  
-
 };
 
 export default UserReviewList;

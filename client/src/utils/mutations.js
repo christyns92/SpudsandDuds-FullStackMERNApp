@@ -67,11 +67,11 @@ export const EDIT_REVIEW = gql`
 `;
 
 export const EDIT_COMMENT = gql`
-  mutation editReview($reviewText: String!) {
-    editReview(reviewText: $reviewText) {
+  mutation editComment($commentText: String!) {
+    editComment(commentText: $commentText) {
       _id
-      reviewText
-      reviewAuthor
+      commentText
+      commentAuthor
       createdAt
     }
   }
