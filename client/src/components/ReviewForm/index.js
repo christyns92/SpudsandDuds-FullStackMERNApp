@@ -35,6 +35,8 @@ const ReviewForm = () => {
     },
   });
 
+
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -63,7 +65,7 @@ const ReviewForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>What's on your movie mind?</h3>
 
       {Auth.loggedIn() ? (
         <>

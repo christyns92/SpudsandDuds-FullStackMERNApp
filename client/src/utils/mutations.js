@@ -54,3 +54,25 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const EDIT_REVIEW = gql`
+  mutation editReview($reviewText: String!) {
+    editReview(reviewText: $reviewText) {
+      _id
+      reviewText
+      reviewAuthor
+      createdAt
+    }
+  }
+`;
+
+export const EDIT_COMMENT = gql`
+  mutation editReview($reviewText: String!) {
+    editReview(reviewText: $reviewText) {
+      _id
+      reviewText
+      reviewAuthor
+      createdAt
+    }
+  }
+`;

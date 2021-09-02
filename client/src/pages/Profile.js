@@ -3,7 +3,7 @@ import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import ReviewForm from '../components/ReviewForm';
-import ReviewList from '../components/ReviewList';
+import UserReviewList from '../components/UserReviewList';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
@@ -46,7 +46,7 @@ const Profile = () => {
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
-          <ReviewList
+          <UserReviewList
             reviews={user.reviews}
             title={`${user.username}'s reviews...`}
             showTitle={false}
