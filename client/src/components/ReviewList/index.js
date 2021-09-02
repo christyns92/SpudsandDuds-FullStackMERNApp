@@ -25,7 +25,7 @@ const ReviewList = ({
                 >
                   {review.reviewAuthor} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    had this review on {review.createdAt}
+                    posted this review on {review.createdAt}
                   </span>
                 </Link>
               ) : (
