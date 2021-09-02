@@ -55,24 +55,21 @@ export const ADD_COMMENT = gql`
   }
 `;
 
-export const EDIT_REVIEW = gql`
-  mutation editReview($reviewText: String!) {
-    editReview(reviewText: $reviewText) {
+export const REMOVE_REVIEW = gql`
+mutation removeReview($reviewId: ID!) {
+  removeReview(reviewId: $reviewId) {
       _id
-      reviewText
-      reviewAuthor
-      createdAt
-    }
   }
+}
 `;
 
-export const EDIT_COMMENT = gql`
-  mutation editComment($commentText: String!) {
-    editComment(commentText: $commentText) {
+export const REMOVE_COMMENT = gql`
+  mutation removeComment($reviewId: ID!, $commentId: ID!) {
+    removeComment(reviewId: $reviewId, commentId: $commentId) {
       _id
-      commentText
-      commentAuthor
-      createdAt
+      comments {
+        _id
+      }
     }
   }
 `;
