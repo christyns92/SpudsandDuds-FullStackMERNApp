@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
+import { Button } from '@material-ui/core';
+
 
 const Header = () => {
   const logout = (event) => {
@@ -16,6 +18,9 @@ const Header = () => {
             <h1 className="m-0">Spuds & Duds</h1>
           </Link>
           <p className="m-0">What's a potato's favorite horror movie?  The Silence of the Yams</p>
+
+         <Button color="primary">Search</Button>
+
         </div>
         <div>
           {Auth.loggedIn() ? (
