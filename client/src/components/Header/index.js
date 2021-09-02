@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 import { Button } from '@material-ui/core';
+import SearchBar from '../SearchBar'
 
 
 const Header = () => {
@@ -19,7 +20,7 @@ const Header = () => {
           </Link>
           <p className="m-0">What's a potato's favorite horror movie?  The Silence of the Yams</p>
 
-         <Button color="primary">Search</Button>
+          <SearchBar/>
 
         </div>
         <div>
