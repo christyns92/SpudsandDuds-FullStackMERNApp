@@ -462,7 +462,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Fjalla One', sans-serif;
     margin: 0 0 0.5rem;
     line-height: 1.25;
 }
@@ -560,6 +560,7 @@ a:hover {
 /* Margin - all sides */
 
 .m-0 {
+    font-family: 'Fjalla One', sans-serif;
     margin: 0 !important;
     color: #31a9e1;
 }
@@ -1144,8 +1145,8 @@ a:hover {
 }
 
 .btn.btn-primary {
-    background-color: #2d3e50;
-    color: #d9e9e8;
+    background-color: #1b89bc;
+    color: #ffffff;
 }
 
 .btn.btn-primary:hover {
