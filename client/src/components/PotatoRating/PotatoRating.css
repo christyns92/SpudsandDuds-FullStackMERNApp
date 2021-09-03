@@ -1,0 +1,19 @@
+button {
+    background-color: transparent;
+    
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .on {
+    opacity: 1;
+    color: #000;
+  }
+  .off {
+    opacity: 0.3;
+    color: #ccc;
+  }
+
+  body {
+    padding: 100px
+  }
