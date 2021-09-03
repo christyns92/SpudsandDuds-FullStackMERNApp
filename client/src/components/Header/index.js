@@ -6,6 +6,8 @@ import { Button } from '@material-ui/core';
 import SearchBar from '../SearchBar'
 
 
+
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
@@ -21,6 +23,7 @@ const Header = () => {
           <p className="m-0">What's a potato's favorite horror movie?  The Silence of the Yams</p>
 
           <SearchBar/>
+          
 
         </div>
         <div>
