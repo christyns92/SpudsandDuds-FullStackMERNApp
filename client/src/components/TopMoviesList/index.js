@@ -43,7 +43,7 @@ export default function SingleLineImageList() {
 
   const api = axios.create({ baseURL: BASE_URL })
 
-  const getNowPlaying = api.get("movie/now_playing", { 
+  const getNowPlaying = api.get("movie", { 
       params: { api_key } 
     });
 
