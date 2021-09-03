@@ -4,10 +4,11 @@ import { useQuery } from '@apollo/client';
 import ReviewList from '../components/ReviewList';
 import ReviewForm from '../components/ReviewForm';
 import TopMoviesList from '../components/TopMoviesList';
-import MovieCard from '../components/MovieCard';
-import OmdbContainer from '../components/MovieCard';
+import MovieCard from '../components/MovieCard/index'
+import OmdbContainer from '../components/OmdbContainer';
 
 import { QUERY_REVIEWS } from '../utils/queries';
+
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_REVIEWS);
@@ -22,23 +23,19 @@ const Home = () => {
         >
           <TopMoviesList />
         </div>
-        <div
+        {/* <div
           className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
+          style={{ border: '1px dotted #1a1a1a', maxwidth: '727px;' }}
         >
           <ReviewForm />
-        </div>
+
+        </div> */}
+
         <div
           className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
+          style={{ border: '1px dotted #1a1a1a', maxwidth: '727px;' }}
         >
-          <MovieCard />
-        </div>
-        <div
-          className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
-        >
-          <OmdbContainer />
+          <OmdbContainer/>    
         </div>
         <div className="col-12 col-md-8 mb-3">
           {loading ? (
