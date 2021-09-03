@@ -78,8 +78,9 @@ export default function RecipeReviewCard() {
       />
       <CardMedia
         className={classes.media}
-        image={getImage(movie.poster_path)} 
-        title={movie.original_title}
+        image="/static/images/cards/paella.jpg"
+        title="Paella dish"
+
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -122,7 +123,7 @@ export default function RecipeReviewCard() {
           </Typography>
         </CardContent>
       </Collapse>
-        ))}
+        
     </Card>
   );
 }
