@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ReviewList = ({
+const UserReviewList = ({
   reviews,
   title,
   showTitle = true,
@@ -25,7 +25,7 @@ const ReviewList = ({
                 >
                   {review.reviewAuthor} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    posted this review on {review.createdAt}
+                    had this review on {review.createdAt}
                   </span>
                 </Link>
               ) : (
@@ -39,6 +39,8 @@ const ReviewList = ({
             <div className="card-body bg-light p-2">
               <p>{review.reviewText}</p>
             </div>
+            <button className="btn btn-default edit-review">Edit</button>
+            <button className="btn btn-default delete-review">Delete</button>
             <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/reviews/${review._id}`}
@@ -51,4 +53,4 @@ const ReviewList = ({
   );
 };
 
-export default ReviewList;
+export default UserReviewList;

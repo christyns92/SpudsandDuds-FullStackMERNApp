@@ -3,7 +3,7 @@ import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import ReviewForm from '../components/ReviewForm';
-import ReviewList from '../components/ReviewList';
+import UserReviewList from '../components/UserReviewList';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
@@ -11,7 +11,9 @@ import Auth from '../utils/auth';
 
 const Profile = () => {
   const { username: userParam } = useParams();
+  console.log({username: userParam});
 
+  // If there is no `username` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
@@ -46,7 +48,7 @@ const Profile = () => {
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
-          <ReviewList
+          <UserReviewList
             reviews={user.reviews}
             title={`${user.username}'s reviews...`}
             showTitle={false}

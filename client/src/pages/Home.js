@@ -5,6 +5,7 @@ import ReviewList from '../components/ReviewList';
 import ReviewForm from '../components/ReviewForm';
 import TopMoviesList from '../components/TopMoviesList';
 import MovieCard from '../components/MovieCard';
+import OmdbContainer from '../components/MovieCard';
 
 import { QUERY_REVIEWS } from '../utils/queries';
 
@@ -32,6 +33,12 @@ const Home = () => {
           style={{ border: '1px dotted #1a1a1a' }}
         >
           <MovieCard />
+        </div>
+        <div
+          className="col-12 col-md-10 mb-3 p-3"
+          style={{ border: '1px dotted #1a1a1a' }}
+        >
+          <OmdbContainer />
         </div>
         <div className="col-12 col-md-8 mb-3">
           {loading ? (

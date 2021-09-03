@@ -59,11 +59,11 @@ export default function RecipeReviewCard() {
   };
   const [data, setData] = useState([]);
   const api = axios.create({ baseURL: BASE_URL })
-  const getNowPlaying = api.get("search/movie?language=en-US&query=mean%20girls&page=1&include_adult=false&", { 
+  const getMovieSearch = api.get("search/movie?language=en-US&query=${query}&page=1&include_adult=false&", { 
       params: { api_key } 
     });
   useEffect(() => {
-      getNowPlaying.then((res) => {
+    getMovieSearch.then((res) => {
           setData(res.data.results);
         });
       }, []);
@@ -87,6 +87,13 @@ export default function RecipeReviewCard() {
             />
           </ImageListItem>
         ))}
+       
+        </Card>
+  );
+}
+
+
+
       {/* <CardHeader
         avatar={
           <Avatar aria-label="profile" className={classes.avatar}>
@@ -157,6 +164,4 @@ export default function RecipeReviewCard() {
           </Typography>
         </CardContent>
       </Collapse> */}
-    </Card>
-  );
-}
+    

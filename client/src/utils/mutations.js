@@ -54,3 +54,22 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const REMOVE_REVIEW = gql`
+mutation removeReview($reviewId: ID!) {
+  removeReview(reviewId: $reviewId) {
+      _id
+  }
+}
+`;
+
+export const REMOVE_COMMENT = gql`
+  mutation removeComment($reviewId: ID!, $commentId: ID!) {
+    removeComment(reviewId: $reviewId, commentId: $commentId) {
+      _id
+      comments {
+        _id
+      }
+    }
+  }
+`;
