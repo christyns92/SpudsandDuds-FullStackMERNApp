@@ -89,9 +89,10 @@ const resolvers = {
           reviewAuthor: context.user.username,
         });
 
-        await User.findOneAndUpdate(
+        const userReviews = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { reviews: review._id } }
+          { $pull: { reviews: review._id } },
+          { new: true }
         );
 
         return review;
