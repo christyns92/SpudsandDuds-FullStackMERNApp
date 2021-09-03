@@ -8,6 +8,7 @@ import SearchBar from '../SearchBar'
 
 
 
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
@@ -21,13 +22,8 @@ const Header = () => {
             <h1 className="m-0">Spuds & Duds</h1>
           </Link>
           <p className="m-0">What's a potato's favorite horror movie?  The Silence of the Yams</p>
-    
-        
         </div>
-        
        
-
-    
       </div>
       <div className="container flex-row justify-center-lg justify-center align-center">
       <div>
