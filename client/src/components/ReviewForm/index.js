@@ -4,7 +4,6 @@ import { useMutation } from "@apollo/client";
 
 import { ADD_REVIEW } from "../../utils/mutations";
 import { QUERY_REVIEWS, QUERY_ME } from "../../utils/queries";
-
 import Auth from "../../utils/auth";
 
 const ReviewForm = () => {
@@ -68,9 +67,8 @@ const ReviewForm = () => {
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
+            className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
+              }`}
           >
             Character Count: {characterCount}/280
           </p>

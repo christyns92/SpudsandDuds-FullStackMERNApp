@@ -4,6 +4,8 @@ import Row from "./Row";
 import Col from "./Col";
 import Card from "./Card";
 import SearchForm from "./SearchForm";
+import ReviewForm from "./ReviewForm";
+
 import MovieDetail from "./MovieDetail";
 import API from "../utils/API";
 
@@ -41,9 +43,20 @@ class OmdbContainer extends Component {
   render() {
     return (
       <Container>
-        <Row>
-          <Col size="md-8">
-            <Card
+        <div>
+        <div size="md-12">
+            <div >
+              <SearchForm
+                value={this.state.search}
+                handleInputChange={this.handleInputChange}
+                handleFormSubmit={this.handleFormSubmit}
+              />
+            </div>
+          </div>
+          </div>
+          <div>
+            <div size="md-12">
+            <div
               heading={this.state.result.Title || "Search for a Movie to Begin"}
             >
               {this.state.result.Title ? (
@@ -57,18 +70,12 @@ class OmdbContainer extends Component {
               ) : (
                 <h3>No Results to Display</h3>
               )}
-            </Card>
-          </Col>
-          <Col size="md-4">
-            <Card heading="Search">
-              <SearchForm
-                value={this.state.search}
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-              />
-            </Card>
-          </Col>
-        </Row>
+              <ReviewForm/>
+            </div>
+          </div>
+       </div>
+             
+       
       </Container>
     );
   }
