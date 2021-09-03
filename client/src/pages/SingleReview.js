@@ -28,7 +28,7 @@ const SingleReview = () => {
       <h3 className="card-header bg-dark text-light p-2 m-0">
         {review.reviewAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
-          had this review on {review.createdAt}
+          posted this review on {review.createdAt}
         </span>
       </h3>
       <div className="bg-light py-4">
