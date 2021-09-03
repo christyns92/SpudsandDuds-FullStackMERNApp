@@ -16,10 +16,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-<<<<<<< HEAD
-
-=======
->>>>>>> d85ee3f8bf1518eb886b2c4a47ae0d2e7d93c918
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -42,29 +38,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: red[500],
   },
 }));
-<<<<<<< HEAD
-
-=======
->>>>>>> d85ee3f8bf1518eb886b2c4a47ae0d2e7d93c918
 const BASE_URL = "https://api.themoviedb.org/3";
 const api_key = "1f0c12a5a877dc629a002fa2c6169442";
 const getImage = (path) => `https://image.tmdb.org/t/p/w200/${path}`;
 
-<<<<<<< HEAD
-
-export default function RecipeReviewCard() {
-  const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
-  const [data, setData] = useState([]);
-
-  const api = axios.create({ baseURL: BASE_URL })
-
-=======
 export default function RecipeReviewCard() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -73,7 +50,6 @@ export default function RecipeReviewCard() {
   };
   const [data, setData] = useState([]);
   const api = axios.create({ baseURL: BASE_URL })
->>>>>>> d85ee3f8bf1518eb886b2c4a47ae0d2e7d93c918
   const getNowPlaying = api.get("movie/now_playing", { 
       params: { api_key } 
     });
@@ -102,13 +78,9 @@ export default function RecipeReviewCard() {
       />
       <CardMedia
         className={classes.media}
-<<<<<<< HEAD
         image="/static/images/cards/paella.jpg"
         title="Paella dish"
-=======
-        image={getImage(movie.poster_path)} 
-        title={movie.original_title}
->>>>>>> d85ee3f8bf1518eb886b2c4a47ae0d2e7d93c918
+
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -116,10 +88,6 @@ export default function RecipeReviewCard() {
           guests. Add 1 cup of frozen peas along with the mussels, if you like.
         </Typography>
       </CardContent>
-<<<<<<< HEAD
-      
-=======
->>>>>>> d85ee3f8bf1518eb886b2c4a47ae0d2e7d93c918
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
@@ -153,24 +121,9 @@ export default function RecipeReviewCard() {
             pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add
             saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
           </Typography>
-<<<<<<< HEAD
-          <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
-            without stirring, until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat to
-            medium-low, add reserved shrimp and mussels, tucking them down into the rice, and cook
-            again without stirring, until mussels have opened and rice is just tender, 5 to 7
-            minutes more. (Discard any mussels that don’t open.)
-          </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
-          </Typography>
         </CardContent>
       </Collapse>
-=======
-        </CardContent>
-      </Collapse>
-        ))}
->>>>>>> d85ee3f8bf1518eb886b2c4a47ae0d2e7d93c918
+        
     </Card>
   );
 }
