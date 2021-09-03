@@ -50,6 +50,8 @@ export default function SingleLineImageList() {
     });
   }, []);
 
+    console.log(data);
+
   return (
     <div className={classes.root}>
       <ImageList className={classes.imageList} cols={5} rowHeight={275}>

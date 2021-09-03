@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 
-import { ADD_REVIEW } from '../../utils/mutations';
-import { QUERY_REVIEWS, QUERY_ME } from '../../utils/queries';
+import { ADD_REVIEW } from "../../utils/mutations";
+import { QUERY_REVIEWS, QUERY_ME } from "../../utils/queries";
 
-import Auth from '../../utils/auth';
+import Auth from "../../utils/auth";
 
 const ReviewForm = () => {
-  const [reviewText, setReviewText] = useState('');
+  const [reviewText, setReviewText] = useState("");
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -46,7 +46,7 @@ const ReviewForm = () => {
         },
       });
 
-      setReviewText('');
+      setReviewText("");
     } catch (err) {
       console.error(err);
     }
@@ -55,7 +55,7 @@ const ReviewForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'reviewText' && value.length <= 280) {
+    if (name === "reviewText" && value.length <= 280) {
       setReviewText(value);
       setCharacterCount(value.length);
     }
