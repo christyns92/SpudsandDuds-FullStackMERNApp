@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
+import PotatoRating from '../PotatoRating/PotatoRating';
 
 const Footer = () => {
   const location = useLocation();
@@ -15,6 +16,8 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
+        <h4>Rate Spuds & Duds</h4>
+        <PotatoRating/>
         <h4>
           Made with{' '}
           <span
@@ -25,7 +28,7 @@ const Footer = () => {
           >
             ❤️
           </span>{' '}
-          by the Spuds and Duds team.
+          by the Spuds & Duds team.
         </h4>
       </div>
     </footer>
