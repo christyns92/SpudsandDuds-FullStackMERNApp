@@ -19,22 +19,6 @@ const UserReviewList = ({
   }, [reviews]);
 
   const [removeReview, { error }] = useMutation(REMOVE_REVIEW);
-  //   update(cache, { data: { review } }) {
-  //     try {
-  //       const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
-
-  //       const newReviews = reviews.filter((r) => (r._id !== review._id));
-
-  //       cache.writeQuery({
-  //         query: QUERY_REVIEWS,
-  //         data: { reviews: [...newReviews] },
-  //       });
-
-  //     } catch (e) {
-  //       console.error(e);
-  //     }
-  //   }
-  // })
 
   const removeReviewHandler = async (event, _id) => {
     event.preventDefault();
@@ -59,6 +43,14 @@ const UserReviewList = ({
   if (!reviews.length) {
     return <h3>No Reviews Yet</h3>;
   }
+
+  const enterEditMode = () => {
+    if (!this.state.editMode) {
+      this.setState({
+        editMode: true,
+      });
+    }
+  };
 
   return (
     <div>
@@ -101,6 +93,9 @@ const UserReviewList = ({
                   >
                     Delete
                   </button>
+                  {this.state.editMode
+                    ? this.renderCommentEdit()
+                    : this.renderCommentRead()}
                   <Link
                     className="btn btn-primary btn-block btn-squared"
                     to={`/reviews/${review._id}`}

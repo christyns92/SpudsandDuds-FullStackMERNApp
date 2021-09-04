@@ -62,13 +62,17 @@ const ReviewForm = () => {
 
   return (
     <div>
-      <h3>Have a movie on your mind? Share your personal movie reviews with friends!</h3>
+      <h3>
+        Have a movie on your mind? Share your personal movie reviews with
+        friends!
+      </h3>
 
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
-              }`}
+            className={`m-0 ${
+              characterCount === 280 || error ? "text-danger" : ""
+            }`}
           >
             Character Count: {characterCount}/280
           </p>
@@ -82,7 +86,7 @@ const ReviewForm = () => {
                 placeholder="Here's a new review..."
                 value={reviewText}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
               ></textarea>
             </div>
@@ -101,7 +105,7 @@ const ReviewForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your reviews. Please{' '}
+          You need to be logged in to share your reviews. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
