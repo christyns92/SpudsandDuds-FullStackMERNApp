@@ -15,13 +15,16 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+    <header className=" text-light mb-4 py-3 flex-row align-center">
       <div className="container flex-row justify-center-lg justify-center align-center">
-        <div>
-          <Link className="text-light" to="/">
-            <h1 className="m-0">Spuds & Duds</h1>
+        <div className="justify-center-lg justify-center align-center">
+       
+          <Link className="text-light justify-center align-center text-align-center" to="/">
+            <h1 className="m-0">&#129364;  Spuds and Duds &#129364;</h1>
           </Link>
-          <p className="m-0">What's a potato's favorite horror movie?  The Silence of the Yams</p>
+           
+          <br></br>
+          <h3 className="m-0">Was the movie a Spud or a Dud? Share your review!</h3>
         </div>
        
       </div>

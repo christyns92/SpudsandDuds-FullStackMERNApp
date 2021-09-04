@@ -17,7 +17,7 @@ class OmdbContainer extends Component {
 
   // When this component mounts, search for the movie "The Matrix"
   componentDidMount() {
-    this.searchMovies("The Matrix");
+    this.searchMovies("Good Burger");
   }
 
   searchMovies = query => {
@@ -54,7 +54,7 @@ class OmdbContainer extends Component {
             </div>
           </div>
           </div>
-          <div>
+          <div  className="theMovieRundown">
             <div size="md-12">
             <div
               heading={this.state.result.Title || "Search for a Movie to Begin"}

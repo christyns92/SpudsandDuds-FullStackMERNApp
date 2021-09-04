@@ -13,7 +13,7 @@ button {
     opacity: 0.3;
     color: #ccc;
   }
-
-  body {
-    padding: 100px
+  .potato {
+    font-size: 50px;
   }
+

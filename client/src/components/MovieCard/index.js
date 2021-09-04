@@ -68,7 +68,7 @@ export default function RecipeReviewCard() {
       console.log(`TESTING THATSSOFESTCH DATA ${data}`)
   return (
     <Card className={classes.root}>
-          {data.map((movie) => (
+          {/* {data.map((movie) => (
           <ImageListItem key={movie.poster_path}>
             <img src={getImage(movie.poster_path)} alt={movie.original_title} />
             <ImageListItemBar
@@ -85,7 +85,7 @@ export default function RecipeReviewCard() {
             />
           </ImageListItem>
         ))}
-       
+        */}
         </Card>
   );
 }
