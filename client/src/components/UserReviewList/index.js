@@ -94,6 +94,7 @@ const UserReviewList = ({
                     <div className="card-body bg-light p-2">
                       <p
                         contentEditable="true"
+                        suppressContentEditableWarning={true}
                         onBlur={(e) =>
                           handleEdit(review._id, e.currentTarget.textContent)
                         }
