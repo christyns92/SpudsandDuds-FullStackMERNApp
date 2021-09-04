@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { REMOVE_REVIEW } from "../../utils/mutations";
 import { EDIT_REVIEW } from "../../utils/mutations";
 
-import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
-import { QUERY_USER, QUERY_ME } from '../../utils/queries';
-
+import { QUERY_USER, QUERY_ME } from "../../utils/queries";
 
 const ReviewList = ({
   reviews,
@@ -17,7 +16,6 @@ const ReviewList = ({
   showTitle = true,
   showUsername = true,
 }) => {
-
   const { username: userParam } = useParams();
 
   // If there is no `username` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
@@ -59,12 +57,11 @@ const ReviewList = ({
   const [editReview, { err }] = useMutation(EDIT_REVIEW);
 
   const handleEdit = async (_id, textContent) => {
-
     try {
       const { data } = await editReview({
         variables: {
           reviewId: _id,
-          reviewText: textContent
+          reviewText: textContent,
         },
       });
 
@@ -94,33 +91,45 @@ const ReviewList = ({
                   to={`/profiles/${review.reviewAuthor}`}
                 >
                   {review.reviewAuthor} <br />
-                  <span style={{ fontSize: '1rem' }}>
+                  <span style={{ fontSize: "1rem" }}>
                     posted this review on {review.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
-                  <span style={{ fontSize: '1rem' }}>
+                  <span style={{ fontSize: "1rem" }}>
                     You had this review on {review.createdAt}
                   </span>
                 </>
               )}
             </h4>
-          <div>
-            {review.reviewAuthor === user.username && editMode ? (
-                    <div className="card-body bg-light p-2">
-                      <p contentEditable="true" suppressContentEditableWarning={true} onBlur={e => handleEdit(review._id, e.currentTarget.textContent)}>{review.reviewText}</p>
-                    </div>
-                  ) : (
-                    <div className="card-body bg-light p-2">
-                      <p>{review.reviewText}</p>
-                  </div> 
-                  )}
+            <div>
+              {review.reviewAuthor === user.username && editMode ? (
+                <div className="card-body bg-light p-2">
+                  <p
+                    contentEditable="true"
+                    suppressContentEditableWarning={true}
+                    onBlur={(e) =>
+                      handleEdit(review._id, e.currentTarget.textContent)
+                    }
+                  >
+                    {review.reviewText}
+                  </p>
+                </div>
+              ) : (
+                <div className="card-body bg-light p-2">
+                  <p>{review.reviewText}</p>
+                </div>
+              )}
             </div>
-                  <div>
-                    {review.reviewAuthor === user.username ? (
-                      <div>
-                      <button onClick={() => setEditMode(true)} type="button" className="btn btn-default edit-review">
+            <div>
+              {review.reviewAuthor === user.username ? (
+                <div>
+                  <button
+                    onClick={() => setEditMode(true)}
+                    type="button"
+                    className="btn btn-default edit-review"
+                  >
                     Edit
                   </button>
                   <button
@@ -131,11 +140,9 @@ const ReviewList = ({
                   >
                     Delete
                   </button>
-                  </div>
-                    ) : (
-                      null
-                    )}  
-                  </div>
+                </div>
+              ) : null}
+            </div>
             <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/reviews/${review._id}`}

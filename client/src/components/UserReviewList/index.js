@@ -43,12 +43,11 @@ const UserReviewList = ({
   const [editReview, { err }] = useMutation(EDIT_REVIEW);
 
   const handleEdit = async (_id, textContent) => {
-
     try {
       const { data } = await editReview({
         variables: {
           reviewId: _id,
-          reviewText: textContent
+          reviewText: textContent,
         },
       });
 
@@ -59,7 +58,6 @@ const UserReviewList = ({
   };
 
   const [editMode, setEditMode] = useState(false);
-
 
   if (!reviews.length) {
     return <h3>No Reviews Yet</h3>;
@@ -94,14 +92,25 @@ const UserReviewList = ({
                   </h4>
                   {editMode ? (
                     <div className="card-body bg-light p-2">
-                      <p contentEditable="true" onBlur={e => handleEdit(review._id, e.currentTarget.textContent)}>{review.reviewText}</p>
+                      <p
+                        contentEditable="true"
+                        onBlur={(e) =>
+                          handleEdit(review._id, e.currentTarget.textContent)
+                        }
+                      >
+                        {review.reviewText}
+                      </p>
                     </div>
                   ) : (
                     <div className="card-body bg-light p-2">
                       <p>{review.reviewText}</p>
-                  </div> 
-                  )}  
-                  <button onClick={() => setEditMode(true)} type="button" className="btn btn-default edit-review">
+                    </div>
+                  )}
+                  <button
+                    onClick={() => setEditMode(true)}
+                    type="button"
+                    className="btn btn-default edit-review"
+                  >
                     Edit
                   </button>
                   <button
