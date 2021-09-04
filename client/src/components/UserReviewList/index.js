@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { REMOVE_REVIEW } from "../../utils/mutations";
-import { QUERY_REVIEWS } from "../../utils/queries";
+import { EDIT_REVIEW } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 
@@ -40,17 +40,30 @@ const UserReviewList = ({
     }
   };
 
+  const [editReview, { err }] = useMutation(EDIT_REVIEW);
+
+  const handleEdit = async (_id, textContent) => {
+
+    try {
+      const { data } = await editReview({
+        variables: {
+          reviewId: _id,
+          reviewText: textContent
+        },
+      });
+
+      setEditMode(false);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const [editMode, setEditMode] = useState(false);
+
+
   if (!reviews.length) {
     return <h3>No Reviews Yet</h3>;
   }
-
-  const enterEditMode = () => {
-    if (!this.state.editMode) {
-      this.setState({
-        editMode: true,
-      });
-    }
-  };
 
   return (
     <div>
@@ -79,10 +92,16 @@ const UserReviewList = ({
                       </>
                     )}
                   </h4>
-                  <div className="card-body bg-light p-2">
-                    <p>{review.reviewText}</p>
-                  </div>
-                  <button type="button" className="btn btn-default edit-review">
+                  {editMode ? (
+                    <div className="card-body bg-light p-2">
+                      <p contentEditable="true" onBlur={e => handleEdit(review._id, e.currentTarget.textContent)}>{review.reviewText}</p>
+                    </div>
+                  ) : (
+                    <div className="card-body bg-light p-2">
+                      <p>{review.reviewText}</p>
+                  </div> 
+                  )}  
+                  <button onClick={() => setEditMode(true)} type="button" className="btn btn-default edit-review">
                     Edit
                   </button>
                   <button
@@ -93,9 +112,6 @@ const UserReviewList = ({
                   >
                     Delete
                   </button>
-                  {this.state.editMode
-                    ? this.renderCommentEdit()
-                    : this.renderCommentRead()}
                   <Link
                     className="btn btn-primary btn-block btn-squared"
                     to={`/reviews/${review._id}`}
