@@ -11,7 +11,6 @@ import Auth from '../utils/auth';
 
 const Profile = () => {
   const { username: userParam } = useParams();
-  console.log({username: userParam});
 
   // If there is no `username` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
@@ -21,6 +20,8 @@ const Profile = () => {
   const user = data?.me || data?.user || {};
 
   console.log(user.username);
+  console.log(user.reviews);
+
 
   // redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -60,7 +61,7 @@ const Profile = () => {
             className="col-12 col-md-10 mb-3 p-3"
             style={{ border: '1px dotted #1a1a1a' }}
           >
-            <ReviewForm />
+            {/* <ReviewForm /> */}
           </div>
         )}
       </div>
