@@ -16,6 +16,7 @@ const typeDefs = gql`
     createdAt: String
     movieTitle: String
     movieImg: String
+    potatoRating: Int
     comments: [Comment]!
   }
 
@@ -42,7 +43,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addReview(reviewText: String!, movieTitle: String!, movieImg: String!): Review
+    addReview(reviewText: String!, movieTitle: String!, movieImg: String!, potatoRating: Int!): Review
     addComment(reviewId: ID!, commentText: String!): Review
     removeReview(reviewId: ID!): Review
     removeComment(reviewId: ID!, commentId: ID!): Review

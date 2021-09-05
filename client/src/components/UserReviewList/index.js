@@ -43,7 +43,6 @@ const UserReviewList = ({
       );
 
       setPost(newReviews);
-      // window.location.reload();
     } catch (err) {
       console.error(err);
     }
@@ -108,6 +107,22 @@ const UserReviewList = ({
                       src={review.movieImg}
                       style={{ margin: "0 auto" }}
                     />
+                    <div className="potato-rating">
+                      {[...Array(5)].map((potato, index) => {
+                        index += 1;
+                        return (
+                          <button
+                            type="button"
+                            key={index}
+                            className={
+                              index <= review.potatoRating ? "on" : "off"
+                            }
+                          >
+                            <span className="potato">&#129364;</span>
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                   {editMode ? (
                     <div className="card-body bg-light p-2">

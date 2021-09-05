@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Container from "./Container";
-import Row from "./Row";
-import Col from "./Col";
-import Card from "./Card";
+// import Row from "./Row";
+// import Col from "./Col";
+// import Card from "./Card";
 import SearchForm from "./SearchForm";
 import ReviewForm from "./ReviewForm";
 // import PotatoRating from "./PotatoRating/PotatoRating";
@@ -50,10 +50,10 @@ class MovieContainer extends Component {
                 value={this.state.search}
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-              />{" "}
-            </div>{" "}
-          </div>{" "}
-        </div>{" "}
+              />
+            </div>
+          </div>
+        </div>
         <div className="theMovieRundown">
           <div size="md-12">
             <div
@@ -74,10 +74,9 @@ class MovieContainer extends Component {
                 title={this.state.result.Title}
                 src={this.state.result.Poster}
               />
-              {" "}
-            </div>{" "}
-          </div>{" "}
-        </div>{" "}
+            </div>
+          </div>
+        </div>
       </Container>
     );
   }

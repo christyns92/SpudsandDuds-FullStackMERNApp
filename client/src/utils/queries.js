@@ -12,6 +12,7 @@ export const QUERY_USER = gql`
         createdAt
         movieTitle
         movieImg
+        potatoRating
       }
     }
   }
@@ -26,6 +27,7 @@ export const QUERY_REVIEWS = gql`
       createdAt
       movieTitle
       movieImg
+      potatoRating
     }
   }
 `;
@@ -39,6 +41,7 @@ export const QUERY_SINGLE_REVIEW = gql`
       createdAt
       movieTitle
       movieImg
+      potatoRating
       comments {
         _id
         commentText
@@ -62,6 +65,7 @@ export const QUERY_ME = gql`
         createdAt
         movieTitle
         movieImg
+        potatoRating
       }
     }
   }
