@@ -15,7 +15,6 @@ import SingleReview from './pages/SingleReview';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import SearchForm from './components/SearchForm';
 
 
 // Construct our main GraphQL API endpoint

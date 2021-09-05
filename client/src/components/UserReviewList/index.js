@@ -6,6 +6,7 @@ import { REMOVE_REVIEW } from "../../utils/mutations";
 import { EDIT_REVIEW } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
+import App from "../Counter.js";
 
 const UserReviewList = ({
   reviews,
@@ -17,6 +18,11 @@ const UserReviewList = ({
     editText: {
       border: "2px solid rgb(112, 70, 46)",
       borderRadius: "4px",
+      margin: "2px",
+    },
+    isRounded: {
+      borderRadius: "10px",
+      margin: "2px",
     },
   };
 
@@ -77,8 +83,8 @@ const UserReviewList = ({
         <>
           {post
             ? post.map((review) => (
-                <div key={review._id} className="card mb-3">
-                  <h4 className="card-header bg-primary text-light p-2 m-0">
+                <div key={review._id} className="card mb-3" style={styles.isRounded}>
+                  <h4 style={styles.isRounded} className="card-header bg-primary text-light p-2 m-0">
                     {showUsername ? (
                       <Link
                         className="text-light"
@@ -86,15 +92,15 @@ const UserReviewList = ({
                       >
                         {review.reviewAuthor} <br />
                         <span style={{ fontSize: "1rem" }}>
-                        Review for {review.movieTitle} <br />
-                        posted on {review.createdAt}
+                          Review for {review.movieTitle} <br />
+                          posted on {review.createdAt}
                         </span>
                       </Link>
                     ) : (
                       <>
                         <span style={{ fontSize: "1rem" }}>
-                        Review for {review.movieTitle} <br />
-                        posted on {review.createdAt}
+                          Review for {review.movieTitle} <br />
+                          posted on {review.createdAt}
                         </span>
                       </>
                     )}
@@ -106,9 +112,25 @@ const UserReviewList = ({
                       src={review.movieImg}
                       style={{ margin: "0 auto" }}
                     />
+                    <div className="potato-rating">
+                      {[...Array(5)].map((potato, index) => {
+                        index += 1;
+                        return (
+                          <button
+                            type="button"
+                            key={index}
+                            className={
+                              index <= review.potatoRating ? "on" : "off"
+                            }
+                          >
+                            <span className="potato">&#129364;</span>
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                   {editMode ? (
-                    <div className="card-body bg-light p-2">
+                    <div style={styles.isRounded} className="card-body bg-light p-2">
                       <p
                         style={styles.editText}
                         contentEditable="true"
@@ -119,7 +141,7 @@ const UserReviewList = ({
                       >
                         {review.reviewText}
                       </p>
-                    <button>Finish Edit</button>
+                      <button>Finish Edit</button>
                     </div>
                   ) : (
                     <div className="card-body bg-light p-2">
@@ -142,6 +164,7 @@ const UserReviewList = ({
                     Delete
                   </button>
                   <Link
+                    style={styles.isRounded}
                     className="btn btn-primary btn-block btn-squared"
                     to={`/reviews/${review._id}`}
                   >
