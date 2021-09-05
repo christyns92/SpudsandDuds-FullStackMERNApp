@@ -50,10 +50,10 @@ class MovieContainer extends Component {
                 value={this.state.search}
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-              />{" "}
-            </div>{" "}
-          </div>{" "}
-        </div>{" "}
+              />
+            </div>
+          </div>
+        </div>
         <div className="theMovieRundown">
           <div size="md-12">
             <div
@@ -69,15 +69,14 @@ class MovieContainer extends Component {
                 />
               ) : (
                 <h3> No Results to Display </h3>
-              )}{" "}
+              )}
               <ReviewForm
                 title={this.state.result.Title}
                 src={this.state.result.Poster}
               />
-              {" "}
-            </div>{" "}
-          </div>{" "}
-        </div>{" "}
+            </div>
+          </div>
+        </div>
       </Container>
     );
   }
