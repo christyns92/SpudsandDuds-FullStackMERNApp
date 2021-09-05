@@ -10,6 +10,8 @@ export const QUERY_USER = gql`
         _id
         reviewText
         createdAt
+        movieTitle
+        movieImg
       }
     }
   }
@@ -22,6 +24,8 @@ export const QUERY_REVIEWS = gql`
       reviewText
       reviewAuthor
       createdAt
+      movieTitle
+      movieImg
     }
   }
 `;
@@ -33,6 +37,8 @@ export const QUERY_SINGLE_REVIEW = gql`
       reviewText
       reviewAuthor
       createdAt
+      movieTitle
+      movieImg
       comments {
         _id
         commentText
@@ -54,6 +60,8 @@ export const QUERY_ME = gql`
         reviewText
         reviewAuthor
         createdAt
+        movieTitle
+        movieImg
       }
     }
   }

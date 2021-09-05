@@ -70,7 +70,10 @@ class OmdbContainer extends Component {
               ) : (
                 <h3>No Results to Display</h3>
               )}
-              <ReviewForm/>
+              <ReviewForm
+              title={this.state.result.Title}
+              src={this.state.result.Poster}
+              />
             </div>
           </div>
        </div>

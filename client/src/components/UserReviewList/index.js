@@ -13,13 +13,12 @@ const UserReviewList = ({
   showTitle = true,
   showUsername = true,
 }) => {
-
-  const styles = { 
+  const styles = {
     editText: {
-      border: '2px solid brown',
-      borderRadius: '4px'
-    }
-  }
+      border: "2px solid rgb(112, 70, 46)",
+      borderRadius: "4px",
+    },
+  };
 
   const [post, setPost] = useState("");
   useEffect(() => {
@@ -87,20 +86,31 @@ const UserReviewList = ({
                       >
                         {review.reviewAuthor} <br />
                         <span style={{ fontSize: "1rem" }}>
-                          had this review on {review.createdAt}
+                        Review for {review.movieTitle} <br />
+                        posted on {review.createdAt}
                         </span>
                       </Link>
                     ) : (
                       <>
                         <span style={{ fontSize: "1rem" }}>
-                          You had this review on {review.createdAt}
+                        Review for {review.movieTitle} <br />
+                        posted on {review.createdAt}
                         </span>
                       </>
                     )}
                   </h4>
+                  <div>
+                    <img
+                      alt={review.movieTitle}
+                      className="img-fluid"
+                      src={review.movieImg}
+                      style={{ margin: "0 auto" }}
+                    />
+                  </div>
                   {editMode ? (
                     <div className="card-body bg-light p-2">
-                      <p style={styles.editText}
+                      <p
+                        style={styles.editText}
                         contentEditable="true"
                         suppressContentEditableWarning={true}
                         onBlur={(e) =>
