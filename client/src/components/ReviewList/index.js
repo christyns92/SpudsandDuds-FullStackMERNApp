@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
+import Like from "../Like"
 
 const ReviewList = ({
   reviews,
@@ -188,6 +189,7 @@ const ReviewList = ({
                 </div>
               ) : null}
             </div>
+            <Like />
             <Link
               style={styles.isRounded}
               className="btn btn-info btn-block btn-squared"

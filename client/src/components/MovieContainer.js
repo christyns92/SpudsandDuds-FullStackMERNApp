@@ -6,7 +6,6 @@ import Container from "./Container";
 import SearchForm from "./SearchForm";
 import ReviewForm from "./ReviewForm";
 // import PotatoRating from "./PotatoRating/PotatoRating";
-
 import MovieDetail from "./MovieDetail";
 import API from "../utils/API";
 
@@ -69,7 +68,7 @@ class MovieContainer extends Component {
                   released={this.state.result.Released}
                 />
               ) : (
-                <h3>No Results to Display</h3>
+                <h3> No Results to Display </h3>
               )}
               <ReviewForm
                 title={this.state.result.Title}

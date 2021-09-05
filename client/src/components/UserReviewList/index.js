@@ -6,6 +6,7 @@ import { REMOVE_REVIEW } from "../../utils/mutations";
 import { EDIT_REVIEW } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
+import App from "../Counter.js";
 
 const UserReviewList = ({
   reviews,
