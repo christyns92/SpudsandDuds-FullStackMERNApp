@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -56,11 +56,11 @@ export const ADD_COMMENT = gql`
 `;
 
 export const REMOVE_REVIEW = gql`
-mutation removeReview($reviewId: ID!) {
-  removeReview(reviewId: $reviewId) {
+  mutation removeReview($reviewId: ID!) {
+    removeReview(reviewId: $reviewId) {
       _id
+    }
   }
-}
 `;
 
 export const REMOVE_COMMENT = gql`
@@ -69,6 +69,31 @@ export const REMOVE_COMMENT = gql`
       _id
       comments {
         _id
+      }
+    }
+  }
+`;
+
+export const EDIT_REVIEW = gql`
+  mutation editReview($reviewId: ID!, $reviewText: String!) {
+    editReview(reviewId: $reviewId, reviewText: $reviewText) {
+      _id
+      reviewText
+    }
+  }
+`;
+
+export const EDIT_COMMENT = gql`
+  mutation editComment($reviewId: ID!, $commentId: ID!, $commentText: String!) {
+    editComment(
+      reviewId: $reviewId
+      commentId: $commentId
+      commentText: $commentText
+    ) {
+      _id
+      comments {
+        _id
+        commentText
       }
     }
   }

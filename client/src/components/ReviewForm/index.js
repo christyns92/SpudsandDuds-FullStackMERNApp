@@ -62,6 +62,7 @@ const ReviewForm = () => {
 
   return (
     <div>
+
       <br></br>
       
       
@@ -71,6 +72,7 @@ const ReviewForm = () => {
       <div className="reviewContainer">
       <h3> Was this movie a Spud or Dud? Write a review now!</h3>
       
+
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
@@ -81,7 +83,7 @@ const ReviewForm = () => {
                 placeholder="my Spud or Dud review..."
                 value={reviewText}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
               ></textarea>
             </div>
@@ -99,7 +101,7 @@ const ReviewForm = () => {
           </div>
       ) : (
         <p>
-          You need to be logged in to share your reviews. Please{' '}
+          You need to be logged in to share your reviews. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

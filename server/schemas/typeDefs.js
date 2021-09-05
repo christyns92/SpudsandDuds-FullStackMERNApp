@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -44,6 +44,8 @@ const typeDefs = gql`
     addComment(reviewId: ID!, commentText: String!): Review
     removeReview(reviewId: ID!): Review
     removeComment(reviewId: ID!, commentId: ID!): Review
+    editReview(reviewId: ID!, reviewText: String!): Review
+    editComment(reviewId: ID!, commentText: String!): Review
   }
 `;
 
