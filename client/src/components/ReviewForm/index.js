@@ -26,12 +26,12 @@ const ReviewForm = (props) => {
       }
 
       // update me object's cache
-      // const { me } = cache.readQuery({ query: QUERY_ME });
-      // console.log(me);
-      // cache.writeQuery({
-      //   query: QUERY_ME,
-      //   data: { me: { ...me, reviews: [...me.reviews, addReview] } },
-      // });
+      const { me } = cache.readQuery({ query: QUERY_ME });
+      console.log(me);
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: { me: { ...me, reviews: [...me.reviews, addReview] } },
+      });
     },
   });
 

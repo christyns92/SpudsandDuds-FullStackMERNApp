@@ -2,10 +2,8 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import ReviewList from '../components/ReviewList';
-import ReviewForm from '../components/ReviewForm';
 import TopMoviesList from '../components/TopMoviesList';
-import MovieCard from '../components/MovieCard/index'
-import MovieContainer from '../components/OmdbContainer';
+import MovieContainer from '../components/MovieContainer';
 
 import { QUERY_REVIEWS } from '../utils/queries';
 
