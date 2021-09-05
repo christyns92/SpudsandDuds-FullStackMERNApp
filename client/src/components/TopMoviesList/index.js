@@ -63,7 +63,6 @@ export default function SingleLineImageList() {
           <ImageListItem key={movie.poster_path}>
             <img src={getImage(movie.poster_path)} alt={movie.original_title} value={movie.original_title} onClick={(e) => {sendTitle(movie.original_title)}} />
             <ImageListItemBar
-              title={movie.original_title}
               classes={{
                 root: classes.titleBar,
                 title: classes.title,
