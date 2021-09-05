@@ -69,7 +69,7 @@ class MovieContainer extends Component {
                 />
               ) : (
                 <h3> No Results to Display </h3>
-              )}{" "}
+              )}
               <ReviewForm
                 title={this.state.result.Title}
                 src={this.state.result.Poster}
