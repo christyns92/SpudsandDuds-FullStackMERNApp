@@ -104,8 +104,10 @@ const ReviewList = ({
               className="card-header bg-info text-light p-2 m-0"
             >
               {showUsername ? (
+                <div>
+
                 <Link
-                  className="text-light"
+                  className="text-light col-6"
                   to={`/profiles/${review.reviewAuthor}`}
                 >
                   {review.reviewAuthor} <br />
@@ -114,6 +116,13 @@ const ReviewList = ({
                     posted on {review.createdAt}
                   </span>
                 </Link>
+                <span style={{ fontSize: "1rem" }}>
+                <h2>{review.movieTitle} </h2><br/>
+                posted on {review.createdAt}
+              </span>
+
+                </div>
+                
               ) : (
                 <>
                   <span style={{ fontSize: "1rem" }}>
