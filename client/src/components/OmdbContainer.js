@@ -5,6 +5,7 @@ import Col from "./Col";
 import Card from "./Card";
 import SearchForm from "./SearchForm";
 import ReviewForm from "./ReviewForm";
+// import PotatoRating from "./PotatoRating/PotatoRating";
 
 import MovieDetail from "./MovieDetail";
 import API from "../utils/API";

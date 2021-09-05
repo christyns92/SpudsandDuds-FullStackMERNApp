@@ -92,7 +92,7 @@ const ReviewList = ({
       {reviews &&
         reviews.map((review) => (
           <div key={review._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+            <h4 className="card-header bg-info text-light p-2 m-0">
               {showUsername ? (
                 <Link
                   className="text-light"
@@ -152,7 +152,7 @@ const ReviewList = ({
               ) : null}
             </div>
             <Link
-              className="btn btn-primary btn-block btn-squared"
+              className="btn btn-info btn-block btn-squared"
               to={`/reviews/${review._id}`}
             >
               Join the discussion on this review.

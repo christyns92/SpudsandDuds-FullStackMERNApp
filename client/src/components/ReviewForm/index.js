@@ -5,6 +5,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_REVIEW } from "../../utils/mutations";
 import { QUERY_REVIEWS, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
+import PotatoRating from "../PotatoRating/PotatoRating";
 
 const ReviewForm = () => {
   const [reviewText, setReviewText] = useState("");
@@ -70,9 +71,15 @@ const ReviewForm = () => {
       {Auth.loggedIn() ? (
         
       <div className="reviewContainer">
-      <h3> Was this movie a Spud or Dud? Write a review now!</h3>
-      
+      <h3>Was this movie a Spud or Dud?</h3>
+      <div className="row">
+        <br></br>
+      <h5 className="col-12">Give it a rating and leave a review!</h5>
+      <div className="col-12"><PotatoRating/></div>
 
+      </div>
+      
+      
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
