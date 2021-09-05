@@ -25,14 +25,15 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview($reviewText: String!, $movieTitle: String!, $movieImg: String!) {
-    addReview(reviewText: $reviewText, movieTitle: $movieTitle, movieImg: $movieImg) {
+  mutation addReview($reviewText: String!, $movieTitle: String!, $movieImg: String!, $potatoRating: Int!) {
+    addReview(reviewText: $reviewText, movieTitle: $movieTitle, movieImg: $movieImg, potatoRating: $potatoRating) {
       _id
       reviewText
       reviewAuthor
       createdAt
       movieTitle
       movieImg
+      potatoRating
       comments {
         _id
         commentText
@@ -50,6 +51,7 @@ export const ADD_COMMENT = gql`
       createdAt
       movieTitle
       movieImg
+      potatoRating
       comments {
         _id
         commentText

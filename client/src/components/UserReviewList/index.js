@@ -42,7 +42,6 @@ const UserReviewList = ({
       );
 
       setPost(newReviews);
-      // window.location.reload();
     } catch (err) {
       console.error(err);
     }
@@ -87,15 +86,15 @@ const UserReviewList = ({
                       >
                         {review.reviewAuthor} <br />
                         <span style={{ fontSize: "1rem" }}>
-                        Review for {review.movieTitle} <br />
-                        posted on {review.createdAt}
+                          Review for {review.movieTitle} <br />
+                          posted on {review.createdAt}
                         </span>
                       </Link>
                     ) : (
                       <>
                         <span style={{ fontSize: "1rem" }}>
-                        Review for {review.movieTitle} <br />
-                        posted on {review.createdAt}
+                          Review for {review.movieTitle} <br />
+                          posted on {review.createdAt}
                         </span>
                       </>
                     )}
@@ -107,6 +106,22 @@ const UserReviewList = ({
                       src={review.movieImg}
                       style={{ margin: "0 auto" }}
                     />
+                    <div className="potato-rating">
+                      {[...Array(5)].map((potato, index) => {
+                        index += 1;
+                        return (
+                          <button
+                            type="button"
+                            key={index}
+                            className={
+                              index <= review.potatoRating ? "on" : "off"
+                            }
+                          >
+                            <span className="potato">&#129364;</span>
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                   {editMode ? (
                     <div className="card-body bg-light p-2">
@@ -120,7 +135,7 @@ const UserReviewList = ({
                       >
                         {review.reviewText}
                       </p>
-                    <button>Finish Edit</button>
+                      <button>Finish Edit</button>
                     </div>
                   ) : (
                     <div className="card-body bg-light p-2">

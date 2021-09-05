@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Col from "../Col";
-import Card from "../Card";
+// import Col from "../Col";
+// import Card from "../Card";
 import Auth from '../../utils/auth';
-import { Button } from '@material-ui/core';
-
-
+// import { Button } from '@material-ui/core';
 
 
 const Header = () => {
