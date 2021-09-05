@@ -7,7 +7,7 @@ import { QUERY_REVIEWS, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
 import PotatoRating from "../PotatoRating/PotatoRating";
 
-const ReviewForm = () => {
+const ReviewForm = (props) => {
   const [reviewText, setReviewText] = useState("");
 
   const [characterCount, setCharacterCount] = useState(0);
@@ -35,6 +35,9 @@ const ReviewForm = () => {
     },
   });
 
+  const movieTitle = props.title;
+  const movieImg = props.src;
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -43,6 +46,8 @@ const ReviewForm = () => {
         variables: {
           reviewText,
           reviewAuthor: Auth.getProfile().data.username,
+          movieTitle: movieTitle,
+          movieImg: movieImg
         },
       });
 

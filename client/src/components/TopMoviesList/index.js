@@ -52,14 +52,17 @@ export default function SingleLineImageList() {
 
     console.log(data);
 
+    const sendTitle = (value) => {
+      console.log(value)
+    };
+
   return (
     <div className={classes.root, "topMovies"}>
       <ImageList className={classes.imageList} cols={5} rowHeight={275}>
         {data.map((movie) => (
           <ImageListItem key={movie.poster_path}>
-            <img src={getImage(movie.poster_path)} alt={movie.original_title} />
+            <img src={getImage(movie.poster_path)} alt={movie.original_title} value={movie.original_title} onClick={(e) => {sendTitle(movie.original_title)}} />
             <ImageListItemBar
-              title={movie.original_title}
               classes={{
                 root: classes.titleBar,
                 title: classes.title,
