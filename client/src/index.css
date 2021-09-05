@@ -132,7 +132,9 @@ strong {
     font-weight: bolder;
 }
 
-
+.reviewListposter {
+    max-width: 100px;
+}
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
@@ -160,8 +162,8 @@ samp {
     margin: 40px 0 40px 170px !important;
 }
 
-.MuiInputBase-root>input {
-    background-color: rgba(30, 52%, 72%, 0.5) !important;
+.MuiInputBase-root >input {
+    background-color: rgba(30, 52, 72, .5) !important;
 }
 
 .makeStyles-search-8 svg {
@@ -1120,7 +1122,7 @@ a:hover {
 }
 
 .bg-info {
-    background-color: #1bbc9b !important;
+    background-color: #bd8c61 !important;
 }
 
 .bg-danger {
