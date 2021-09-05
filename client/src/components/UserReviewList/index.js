@@ -13,6 +13,14 @@ const UserReviewList = ({
   showTitle = true,
   showUsername = true,
 }) => {
+
+  const styles = { 
+    editText: {
+      border: '2px solid brown',
+      borderRadius: '4px'
+    }
+  }
+
   const [post, setPost] = useState("");
   useEffect(() => {
     setPost(reviews);
@@ -92,7 +100,7 @@ const UserReviewList = ({
                   </h4>
                   {editMode ? (
                     <div className="card-body bg-light p-2">
-                      <p
+                      <p style={styles.editText}
                         contentEditable="true"
                         suppressContentEditableWarning={true}
                         onBlur={(e) =>

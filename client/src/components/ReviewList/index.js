@@ -16,6 +16,14 @@ const ReviewList = ({
   showTitle = true,
   showUsername = true,
 }) => {
+
+  const styles = { 
+    editText: {
+      border: '2px solid brown',
+      borderRadius: '4px'
+    }
+  }
+
   const { username: userParam } = useParams();
 
   // If there is no `username` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
@@ -106,7 +114,7 @@ const ReviewList = ({
             <div>
               {review.reviewAuthor === user.username && editMode ? (
                 <div className="card-body bg-light p-2">
-                  <p
+                  <p style={styles.editText}
                     contentEditable="true"
                     suppressContentEditableWarning={true}
                     onBlur={(e) =>
