@@ -70,7 +70,7 @@ function SearchForm(props) {
   const classes = useStyles();
   return (
     <div className={(classes.search, "row")}>
-      <div className="col-5">
+      <div className="col-9">
         <span className={classes.searchIcon}>
           <SearchIcon />
         </span>
