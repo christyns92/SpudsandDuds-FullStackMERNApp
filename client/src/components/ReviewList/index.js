@@ -91,19 +91,36 @@ const ReviewList = ({
       {showTitle && <h3>{title}</h3>}
       {reviews &&
         reviews.map((review) => (
-          <div key={review._id} className="card mb-3">
-            <h4 className="card-header bg-info text-light p-2 m-0">
+          <div key={review._id} className="card mb-3 ">
+            <div className="row">
+
+            <div className="col-3">
+              <img
+                      alt={review.movieTitle}
+                      className="img-fluid reviewListposter"
+                      src={review.movieImg}
+                      style={{ margin: '0 auto' }}
+                    />
+            </div>
+
+            <h4 className="card-header bg-info text-light p-2 m-0 col-9">
               {showUsername ? (
+                <div>
+
                 <Link
-                  className="text-light"
+                  className="text-light col-6"
                   to={`/profiles/${review.reviewAuthor}`}
                 >
-                  {review.reviewAuthor} <br />
-                  <span style={{ fontSize: "1rem" }}>
-                    Review for {review.movieTitle} <br/>
-                    posted on {review.createdAt}
-                  </span>
+                  {review.reviewAuthor}'s Review for
+                  
                 </Link>
+                <span style={{ fontSize: "1rem" }}>
+                <h2>{review.movieTitle} </h2><br/>
+                posted on {review.createdAt}
+              </span>
+
+                </div>
+                
               ) : (
                 <>
                   <span style={{ fontSize: "1rem" }}>
@@ -112,14 +129,10 @@ const ReviewList = ({
                 </>
               )}
             </h4>
-            <div>
-            <img
-                    alt={review.movieTitle}
-                    className="img-fluid"
-                    src={review.movieImg}
-                    style={{ margin: '0 auto' }}
-                  />
+
             </div>
+            
+            
             <div>
               {review.reviewAuthor === user.username && editMode ? (
                 <div className="card-body bg-light p-2">

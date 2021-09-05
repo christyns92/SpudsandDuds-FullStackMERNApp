@@ -10,7 +10,7 @@ import ReviewForm from "./ReviewForm";
 import MovieDetail from "./MovieDetail";
 import API from "../utils/API";
 
-class OmdbContainer extends Component {
+class MovieContainer extends Component {
   state = {
     result: {},
     search: ""
@@ -35,7 +35,7 @@ class OmdbContainer extends Component {
     });
   };
 
-  // When the form is submitted, search the OMDB API for the value of `this.state.search`
+  // When the form is submitted, search the Movie API for the value of `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchMovies(this.state.search);
@@ -85,4 +85,4 @@ class OmdbContainer extends Component {
   }
 }
 
-export default OmdbContainer;
+export default MovieContainer;
