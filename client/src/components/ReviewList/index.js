@@ -50,7 +50,7 @@ const ReviewList = ({
           reviewId: _id,
         },
       });
-      console.log(data);
+      // console.log(data);
       const newReviews = await post.filter(
         (r) => r._id !== data.removeReview._id
       );

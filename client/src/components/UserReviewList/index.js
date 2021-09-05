@@ -42,7 +42,6 @@ const UserReviewList = ({
       );
 
       setPost(newReviews);
-      // window.location.reload();
     } catch (err) {
       console.error(err);
     }
