@@ -20,7 +20,12 @@ const ReviewList = ({
     editText: {
       border: "2px solid rgb(112, 70, 46)",
       borderRadius: "4px",
+      margin: "2px"
     },
+    isRounded: {
+      borderRadius: "10px",
+      margin: "2px"
+    }
   };
 
   const { username: userParam } = useParams();
@@ -90,8 +95,8 @@ const ReviewList = ({
       {showTitle && <h3>{title}</h3>}
       {post &&
         post.map((review) => (
-          <div key={review._id} className="card mb-3">
-            <h4 className="card-header bg-info text-light p-2 m-0">
+          <div key={review._id} className="card mb-3" style={styles.isRounded}>
+            <h4 style={styles.isRounded} className="card-header bg-info text-light p-2 m-0">
               {showUsername ? (
                 <Link
                   className="text-light"
@@ -111,7 +116,7 @@ const ReviewList = ({
                 </>
               )}
             </h4>
-            <div>
+            <div >
               <img
                 alt={review.movieTitle}
                 className="img-fluid"
@@ -119,7 +124,7 @@ const ReviewList = ({
                 style={{ margin: "0 auto" }}
               />
             </div>
-            <div>
+            <div style={styles.isRounded}>
               {review.reviewAuthor === user.username && editMode ? (
                 <div className="card-body bg-light p-2">
                   <p
@@ -134,7 +139,7 @@ const ReviewList = ({
                   </p>
                 </div>
               ) : (
-                <div className="card-body bg-light p-2">
+                <div style={styles.isRounded} className="card-body bg-light p-2">
                   <p>{review.reviewText}</p>
                 </div>
               )}
@@ -160,7 +165,7 @@ const ReviewList = ({
                 </div>
               ) : null}
             </div>
-            <Link
+            <Link style={styles.isRounded}
               className="btn btn-info btn-block btn-squared"
               to={`/reviews/${review._id}`}
             >
