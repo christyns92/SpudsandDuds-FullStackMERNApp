@@ -69,8 +69,13 @@ const useStyles = makeStyles((theme) => ({
 function SearchForm(props) {
   const classes = useStyles();
   return (
+<<<<<<< HEAD
+      <div className={classes.search, "row"}>
+        <div className="col-9">
+=======
     <div className={(classes.search, "row")}>
       <div className="col-5">
+>>>>>>> 3f7aa5da52158d4c826488d11539ecd0de5f4d9f
         <span className={classes.searchIcon}>
           <SearchIcon />
         </span>
@@ -86,6 +91,10 @@ function SearchForm(props) {
           name="search"
           type="text"
           className="form-control"
+<<<<<<< HEAD
+           
+=======
+>>>>>>> 3f7aa5da52158d4c826488d11539ecd0de5f4d9f
           id="search"
         />
       </div>
