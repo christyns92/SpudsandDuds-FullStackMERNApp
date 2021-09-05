@@ -54,6 +54,7 @@ const ReviewForm = (props) => {
       });
 
       setReviewText("");
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
@@ -83,7 +84,7 @@ const ReviewForm = (props) => {
       <h3>Was this movie a Spud or Dud?</h3>
       <div className="row">
         <br></br>
-      <h5 className="col-12">Give it a rating and leave a review!</h5>
+      {/* <h5 className="col-12">Give it a rating and leave a review!</h5> */}
       <div className="potato-rating">
       {[...Array(5)].map((potato, index) => {
         index += 1;
