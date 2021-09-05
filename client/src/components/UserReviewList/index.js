@@ -6,7 +6,6 @@ import { REMOVE_REVIEW } from "../../utils/mutations";
 import { EDIT_REVIEW } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
-import App from "../Counter.js";
 
 const UserReviewList = ({
   reviews,
@@ -83,7 +82,7 @@ const UserReviewList = ({
         <>
           {post
             ? post.map((review) => (
-                <div key={review._id} className="card mb-3" style={styles.isRounded}>
+                <div key={review._id} className="mx-auto card mb-3" style={styles.isRounded}>
                   <h4 style={styles.isRounded} className="card-header bg-primary text-light p-2 m-0">
                     {showUsername ? (
                       <Link

@@ -95,10 +95,10 @@ const ReviewList = ({
 
   return (
     <div>
-      {showTitle && <h3>{title}</h3>}
+      {showTitle && <h3 className="text-align-center">{title}</h3>}
       {post &&
         post.map((review) => (
-          <div key={review._id} className="card mb-3" style={styles.isRounded}>
+          <div key={review._id} className="mx-auto card mb-3" style={styles.isRounded}>
             <h4
               style={styles.isRounded}
               className="card-header bg-info text-light p-2 m-0"
