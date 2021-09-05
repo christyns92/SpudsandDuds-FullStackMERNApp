@@ -161,7 +161,7 @@ samp {
 }
 
 .MuiInputBase-root>input {
-    background-color: rgb(30, 52%, 72%, 0.5) i !important;
+    background-color: rgba(30, 52%, 72%, 0.5) !important;
 }
 
 .makeStyles-search-8 svg {
@@ -1292,9 +1292,17 @@ a:hover {
     text-decoration: none;
 }
 
+
+/* .card .mb-3 {
+    border-radius: 10px;
+    border: 2px solid #9d6931 !important;
+    background-color: #634729 !important;
+} */
+
 .card {
-    border: 1px solid #1b89bc;
-    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: 2px solid #9d6931 !important;
+    background-color: #634729 !important;
 }
 
 .card .card-header {

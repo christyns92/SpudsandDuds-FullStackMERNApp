@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import FaThumbsUp from "react-icons/fa";
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+
 const App = () => {
   const [count, setCount] = useState(0);
   const inc = () => {
@@ -8,7 +9,9 @@ const App = () => {
 
   return (
     <div>
-      <button onClick={inc}>+</button>
+      <button onClick={inc}>
+        <ThumbUpIcon></ThumbUpIcon>
+      </button>
       {count}
     </div>
   );

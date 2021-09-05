@@ -5,12 +5,11 @@ import Col from "./Col";
 import Card from "./Card";
 import SearchForm from "./SearchForm";
 import ReviewForm from "./ReviewForm";
-
+// import PotatoRating from "./PotatoRating/PotatoRating";
 import MovieDetail from "./MovieDetail";
 import API from "../utils/API";
-import App from "./Counter.js";
 
-class OmdbContainer extends Component {
+class MovieContainer extends Component {
   state = {
     result: {},
     search: "",
@@ -71,8 +70,11 @@ class OmdbContainer extends Component {
               ) : (
                 <h3> No Results to Display </h3>
               )}{" "}
-              <ReviewForm />
-              <App />
+              <ReviewForm
+                title={this.state.result.Title}
+                src={this.state.result.Poster}
+              />
+              {" "}
             </div>{" "}
           </div>{" "}
         </div>{" "}
@@ -81,4 +83,4 @@ class OmdbContainer extends Component {
   }
 }
 
-export default OmdbContainer;
+export default MovieContainer;

@@ -16,7 +16,7 @@ const UserReviewList = ({
 }) => {
   const styles = {
     editText: {
-      border: "2px solid brown",
+      border: "2px solid rgb(112, 70, 46)",
       borderRadius: "4px",
     },
   };
@@ -43,6 +43,7 @@ const UserReviewList = ({
       );
 
       setPost(newReviews);
+      // window.location.reload();
     } catch (err) {
       console.error(err);
     }
@@ -87,17 +88,27 @@ const UserReviewList = ({
                       >
                         {review.reviewAuthor} <br />
                         <span style={{ fontSize: "1rem" }}>
-                          had this review on {review.createdAt}
+                          Review for {review.movieTitle} <br />
+                          posted on {review.createdAt}
                         </span>
                       </Link>
                     ) : (
                       <>
                         <span style={{ fontSize: "1rem" }}>
-                          You had this review on {review.createdAt}
+                          Review for {review.movieTitle} <br />
+                          posted on {review.createdAt}
                         </span>
                       </>
                     )}
                   </h4>
+                  <div>
+                    <img
+                      alt={review.movieTitle}
+                      className="img-fluid"
+                      src={review.movieImg}
+                      style={{ margin: "0 auto" }}
+                    />
+                  </div>
                   {editMode ? (
                     <div className="card-body bg-light p-2">
                       <p
@@ -110,6 +121,7 @@ const UserReviewList = ({
                       >
                         {review.reviewText}
                       </p>
+                      <button>Finish Edit</button>
                     </div>
                   ) : (
                     <div className="card-body bg-light p-2">
@@ -135,7 +147,6 @@ const UserReviewList = ({
                     className="btn btn-primary btn-block btn-squared"
                     to={`/reviews/${review._id}`}
                   >
-                    <App />
                     Join the discussion on this review.
                   </Link>
                 </div>

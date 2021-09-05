@@ -19,6 +19,16 @@ const reviewSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
+  movieTitle: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  movieImg: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   comments: [
     {
       commentText: {

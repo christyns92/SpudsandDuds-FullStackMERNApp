@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
+import Like from "../Like"
 
 const ReviewList = ({
   reviews,
@@ -16,13 +17,12 @@ const ReviewList = ({
   showTitle = true,
   showUsername = true,
 }) => {
-
-  const styles = { 
+  const styles = {
     editText: {
-      border: '2px solid brown',
-      borderRadius: '4px'
-    }
-  }
+      border: "2px solid rgb(112, 70, 46)",
+      borderRadius: "4px",
+    },
+  };
 
   const { username: userParam } = useParams();
 
@@ -89,10 +89,10 @@ const ReviewList = ({
   return (
     <div>
       {showTitle && <h3>{title}</h3>}
-      {reviews &&
-        reviews.map((review) => (
+      {post &&
+        post.map((review) => (
           <div key={review._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+            <h4 className="card-header bg-info text-light p-2 m-0">
               {showUsername ? (
                 <Link
                   className="text-light"
@@ -100,7 +100,8 @@ const ReviewList = ({
                 >
                   {review.reviewAuthor} <br />
                   <span style={{ fontSize: "1rem" }}>
-                    posted this review on {review.createdAt}
+                    Review for {review.movieTitle} <br />
+                    posted on {review.createdAt}
                   </span>
                 </Link>
               ) : (
@@ -112,9 +113,18 @@ const ReviewList = ({
               )}
             </h4>
             <div>
+              <img
+                alt={review.movieTitle}
+                className="img-fluid"
+                src={review.movieImg}
+                style={{ margin: "0 auto" }}
+              />
+            </div>
+            <div>
               {review.reviewAuthor === user.username && editMode ? (
                 <div className="card-body bg-light p-2">
-                  <p style={styles.editText}
+                  <p
+                    style={styles.editText}
                     contentEditable="true"
                     suppressContentEditableWarning={true}
                     onBlur={(e) =>
@@ -151,8 +161,9 @@ const ReviewList = ({
                 </div>
               ) : null}
             </div>
+            <Like />
             <Link
-              className="btn btn-primary btn-block btn-squared"
+              className="btn btn-info btn-block btn-squared"
               to={`/reviews/${review._id}`}
             >
               Join the discussion on this review.

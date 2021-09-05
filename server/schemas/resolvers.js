@@ -49,11 +49,13 @@ const resolvers = {
 
       return { token, user };
     },
-    addReview: async (parent, { reviewText }, context) => {
+    addReview: async (parent, { reviewText, movieTitle, movieImg }, context) => {
       if (context.user) {
         const review = await Review.create({
           reviewText,
           reviewAuthor: context.user.username,
+          movieTitle,
+          movieImg
         });
 
         await User.findOneAndUpdate(
