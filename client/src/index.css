@@ -1,27 +1,46 @@
 /* light brown #9B6617 */
+
+
 /* background-color: #000000; */
+
+
 /* background-color: #C5944A; */
+
+
 /* background-color: #955224; */
-/* background-color: #DBB171; */ 
+
+
+/* background-color: #DBB171; */
+
+
 /* background-color: #492a04;  */
+
+
 /* CSS HEX */
---almond: #ede0d4ff;
+
+
+/* --almond: #ede0d4ff;
 --desert-sand: #e6ccb2ff;
 --tan: #ddb892ff;
 --cafe-au-lait: #b08968ff;
 --coffee: #7f5539ff;
---brown-sugar: #9c6644;
+--brown-sugar: #9c6644; */
+
 
 /* CSS HSL */
---almond: hsla(29, 41%, 88%, 1);
+
+
+/* --almond: hsla(29, 41%, 88%, 1);
 --desert-sand: hsla(30, 51%, 80%, 1);
 --tan: hsla(30, 52%, 72%, 1);
 --cafe-au-lait: hsla(27, 31%, 55%, 1);
 --coffee: hsla(24, 38%, 36%, 1);
---brown-sugar: hsla(23, 39%, 44%, 1);
+--brown-sugar: hsla(23, 39%, 44%, 1); */
 
 
 /* SCSS Gradient */
+
+
 /* $gradient-top: linear-gradient(0deg, #ede0d4ff, #e6ccb2ff, #ddb892ff, #b08968ff, #7f5539ff, #9c6644ff);
 $gradient-right: linear-gradient(90deg, #ede0d4ff, #e6ccb2ff, #ddb892ff, #b08968ff, #7f5539ff, #9c6644ff);
 $gradient-bottom: linear-gradient(180deg, #ede0d4ff, #e6ccb2ff, #ddb892ff, #b08968ff, #7f5539ff, #9c6644ff);
@@ -32,12 +51,12 @@ $gradient-top-left: linear-gradient(225deg, #ede0d4ff, #e6ccb2ff, #ddb892ff, #b0
 $gradient-bottom-left: linear-gradient(315deg, #ede0d4ff, #e6ccb2ff, #ddb892ff, #b08968ff, #7f5539ff, #9c6644ff);
 $gradient-radial: radial-gradient(#ede0d4ff, #e6ccb2ff, #ddb892ff, #b08968ff, #7f5539ff, #9c6644ff); */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 .generic_class {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap");
 li .MuiImageListItem-root {
     width: 25%;
     height: 250px;
@@ -50,12 +69,10 @@ html {
     /* 2 */
 }
 
-
 body {
     margin: 0;
-    background: rgb(112, 70, 46);
+    background: #000000;
 }
-
 
 main {
     display: block;
@@ -66,7 +83,6 @@ header {
     width: 100%;
     background-color: none;
 }
-
 
 
 /* h1 {
@@ -86,7 +102,6 @@ hr {
     /* 2 */
 }
 
-
 pre {
     font-family: monospace, monospace;
     /* 1 */
@@ -94,13 +109,9 @@ pre {
     /* 2 */
 }
 
-
-
 a {
     background-color: transparent;
 }
-
-
 
 abbr[title] {
     border-bottom: none;
@@ -136,27 +147,30 @@ samp {
     /* 2 */
 }
 
-.makeStyles-searchIcon-27, .makeStyles-inputRoot-10 , .MuiSvgIcon-root, .makeStyles-inputRoot-19 {
+.makeStyles-searchIcon-27,
+.makeStyles-inputRoot-10,
+.MuiSvgIcon-root,
+.makeStyles-inputRoot-19 {
     color: white !important;
     font-size: 20px !important;
-    
 }
 
 .makeStyles-search-8 {
- max-width: 70% !important;
- margin: 40px 0 40px 170px !important;
+    max-width: 70% !important;
+    margin: 40px 0 40px 170px !important;
 }
 
-.MuiInputBase-root >input {
-    background-color: rgb(30, 52%, 72%, .5) i !important;
+.MuiInputBase-root>input {
+    background-color: rgb(30, 52%, 72%, 0.5) i !important;
 }
 
 .makeStyles-search-8 svg {
     width: 30px;
     height: 30px;
-   }
+}
 
-.MuiInputBase-root, .makeStyles-inputInput-11 {
+.MuiInputBase-root,
+.makeStyles-inputInput-11 {
     padding-left: 52px !important;
     width: 70% !important;
     color: white !important;
@@ -166,9 +180,11 @@ samp {
 }
 
 .searchButton {
- text-align: right;
- margin-left: 50px;
+    text-align: right;
+    margin-left: 50px;
 }
+
+
 /**
  * Add the correct font size in all browsers.
  */
@@ -235,7 +251,6 @@ textarea {
     /* 1 */
     margin: 0;
     /* 2 */
-   
 }
 
 
@@ -268,9 +283,9 @@ select {
  */
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
     -webkit-appearance: button;
 }
 
@@ -280,9 +295,9 @@ button,
  */
 
 button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
     border-style: none;
     padding: 0;
 }
@@ -293,9 +308,9 @@ button::-moz-focus-inner,
  */
 
 button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
     outline: 1px solid ButtonText;
 }
 
@@ -339,41 +354,45 @@ legend {
 progress {
     vertical-align: baseline;
 }
- .no-margin {
-     margin: 0px !important
- }
 
- .no-padding {
-    padding: 0px !important
+.no-margin {
+    margin: 0px !important;
+}
+
+.no-padding {
+    padding: 0px !important;
 }
 
 .reviewContainer {
     margin-left: 40px;
 }
+
+
 /**
  * Remove the default vertical scrollbar in IE 10+.
  */
 
 textarea {
     overflow: auto;
-    background-color: hsla(30, 51%, 80%, 1)!important;
+    background-color: hsla(30, 51%, 80%, 1) !important;
     border: none !important;
 }
 
 .theMovieRundown {
-    border: 2px solid hsla(30, 51%, 80%, .4)!important;
-    background-color:hsla(30, 51%, 80%, .2)!important;
+    border: 2px solid hsla(30, 51%, 80%, 0.4) !important;
+    background-color: hsla(30, 51%, 80%, 0.2) !important;
     border-radius: 10px;
-    padding:40px 20px;
+    padding: 40px 20px;
 }
+
 
 /**
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
 
-[type='checkbox'],
-[type='radio'] {
+[type="checkbox"],
+[type="radio"] {
     box-sizing: border-box;
     /* 1 */
     padding: 0;
@@ -385,8 +404,8 @@ textarea {
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 
@@ -396,7 +415,7 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 
-[type='search'] {
+[type="search"] {
     -webkit-appearance: textfield;
     /* 1 */
     outline-offset: -2px;
@@ -408,7 +427,7 @@ textarea {
  * Remove the inner padding in Chrome and Safari on macOS.
  */
 
-[type='search']::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 
@@ -490,7 +509,7 @@ body {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 16px;
     color: #1b89bc;
 }
@@ -501,7 +520,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Bubblegum Sans', cursive !important;
+    font-family: "Bubblegum Sans", cursive !important;
     margin: 0 0 0.5rem;
     line-height: 1.25;
     color: rgb(184, 150, 127) !important;
@@ -509,11 +528,11 @@ h6 {
 
 h1 {
     font-size: 4rem;
-    font-family: 'Bubblegum Sans', cursive !important;
+    font-family: "Bubblegum Sans", cursive !important;
     color: #ede0d4ff !important;
     text-decoration: none;
-
 }
+
 h1:hover {
     color: rgb(102, 195, 207) !important;
 }
@@ -607,7 +626,7 @@ a:hover {
 /* Margin - all sides */
 
 .m-0 {
-    font-family: 'Fjalla One', sans-serif;
+    font-family: "Fjalla One", sans-serif;
     margin: 0 !important;
     color: #31a9e1;
 }
@@ -1169,7 +1188,6 @@ a:hover {
 .btn:hover {
     background-color: #cecece;
     text-decoration: none;
-
 }
 
 .btn.btn-squared {
@@ -1201,7 +1219,6 @@ a:hover {
 .btn.btn-primary:hover {
     background-color: #d89f61;
     text-decoration: none;
-
 }
 
 .btn.btn-danger {
@@ -1221,7 +1238,6 @@ a:hover {
 .btn.btn-info:hover {
     background-color: #e9c391;
     text-decoration: none;
-
 }
 
 .btn.btn-light {
@@ -1232,7 +1248,6 @@ a:hover {
 .btn.btn-light:hover {
     background-color: #b3997c;
     text-decoration: none;
-
 }
 
 .btn.btn-dark {
@@ -1243,7 +1258,6 @@ a:hover {
 .btn.btn-dark:hover {
     background-color: #5f5f5f;
     text-decoration: none;
-
 }
 
 .btn.btn-white {
@@ -1254,33 +1268,28 @@ a:hover {
 .btn.btn-white:hover {
     background-color: #cccccc;
     text-decoration: none;
-
 }
 
 .btn.btn-black {
     background-color: #000000;
     color: #ffffff;
     text-decoration: none;
-
 }
 
 .btn.btn-black:hover {
     background-color: #666666;
     text-decoration: none;
-
 }
 
 .btn.btn-link {
     background-color: #1b89bc;
     color: #ffffff;
     text-decoration: none;
-
 }
 
 .btn.btn-link:hover {
     background-color: #1b89bc;
     text-decoration: none;
-
 }
 
 .card {
@@ -1357,19 +1366,19 @@ form .form-input.form-input-squared {
     border-radius: 0;
 }
 
-form [type='checkbox'],
-form [type='radio'] {
+form [type="checkbox"],
+form [type="radio"] {
     display: inline-block;
 }
 
-label form [type='checkbox'],
-label form [type='radio'] {
+label form [type="checkbox"],
+label form [type="radio"] {
     display: inline-block;
 }
 
 .container {
     width: 100%;
-    height:100%;
+    height: 100%;
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
@@ -1378,23 +1387,27 @@ label form [type='radio'] {
 .container.container-fluid {
     width: 92%;
 }
- .topMovies {
+
+.topMovies {
     border: 0px solid #5f5f5f;
     border-radius: 10px;
     background: #784e2ef7;
     height: auto !important;
     width: auto !important;
     padding: 10px;
- }
- .topMovies ul {
+}
+
+.topMovies ul {
     height: auto !important;
     width: auto !important;
     border-radius: 10px;
 }
- .topMovies li {
-     height: auto !important;
-     width: auto !important;
- }
+
+.topMovies li {
+    height: auto !important;
+    width: auto !important;
+}
+
 
 /* FLEX CONTENT */
 
@@ -1490,7 +1503,7 @@ label form [type='radio'] {
     margin-right: -15px;
 }
 
-[class*='col-'] {
+[class*="col-"] {
     position: relative;
     width: 100%;
     padding-right: 15px;

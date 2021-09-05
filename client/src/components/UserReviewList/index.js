@@ -6,6 +6,7 @@ import { REMOVE_REVIEW } from "../../utils/mutations";
 import { EDIT_REVIEW } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
+import App from "../Counter.js";
 
 const UserReviewList = ({
   reviews,
@@ -13,13 +14,12 @@ const UserReviewList = ({
   showTitle = true,
   showUsername = true,
 }) => {
-
-  const styles = { 
+  const styles = {
     editText: {
-      border: '2px solid brown',
-      borderRadius: '4px'
-    }
-  }
+      border: "2px solid brown",
+      borderRadius: "4px",
+    },
+  };
 
   const [post, setPost] = useState("");
   useEffect(() => {
@@ -100,7 +100,8 @@ const UserReviewList = ({
                   </h4>
                   {editMode ? (
                     <div className="card-body bg-light p-2">
-                      <p style={styles.editText}
+                      <p
+                        style={styles.editText}
                         contentEditable="true"
                         suppressContentEditableWarning={true}
                         onBlur={(e) =>
@@ -134,6 +135,7 @@ const UserReviewList = ({
                     className="btn btn-primary btn-block btn-squared"
                     to={`/reviews/${review._id}`}
                   >
+                    <App />
                     Join the discussion on this review.
                   </Link>
                 </div>

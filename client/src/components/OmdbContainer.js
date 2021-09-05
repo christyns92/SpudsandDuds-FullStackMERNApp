@@ -8,11 +8,12 @@ import ReviewForm from "./ReviewForm";
 
 import MovieDetail from "./MovieDetail";
 import API from "../utils/API";
+import App from "./Counter.js";
 
 class OmdbContainer extends Component {
   state = {
     result: {},
-    search: ""
+    search: "",
   };
 
   // When this component mounts, search for the movie "The Matrix"
@@ -20,22 +21,22 @@ class OmdbContainer extends Component {
     this.searchMovies("Good Burger");
   }
 
-  searchMovies = query => {
+  searchMovies = (query) => {
     API.search(query)
-      .then(res => this.setState({ result: res.data }))
-      .catch(err => console.log(err));
+      .then((res) => this.setState({ result: res.data }))
+      .catch((err) => console.log(err));
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
   // When the form is submitted, search the OMDB API for the value of `this.state.search`
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
     this.searchMovies(this.state.search);
   };
@@ -44,18 +45,18 @@ class OmdbContainer extends Component {
     return (
       <Container>
         <div>
-        <div size="md-12">
-            <div >
+          <div size="md-12">
+            <div>
               <SearchForm
                 value={this.state.search}
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-              />
-            </div>
-          </div>
-          </div>
-          <div  className="theMovieRundown">
-            <div size="md-12">
+              />{" "}
+            </div>{" "}
+          </div>{" "}
+        </div>{" "}
+        <div className="theMovieRundown">
+          <div size="md-12">
             <div
               heading={this.state.result.Title || "Search for a Movie to Begin"}
             >
@@ -68,14 +69,13 @@ class OmdbContainer extends Component {
                   released={this.state.result.Released}
                 />
               ) : (
-                <h3>No Results to Display</h3>
-              )}
-              <ReviewForm/>
-            </div>
-          </div>
-       </div>
-             
-       
+                <h3> No Results to Display </h3>
+              )}{" "}
+              <ReviewForm />
+              <App />
+            </div>{" "}
+          </div>{" "}
+        </div>{" "}
       </Container>
     );
   }
