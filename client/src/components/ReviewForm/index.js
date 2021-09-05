@@ -71,8 +71,7 @@ const ReviewForm = (props) => {
 
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-  
-  // console.log(rating);
+
 
   return (
     <div>
