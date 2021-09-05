@@ -56,7 +56,6 @@ const ReviewList = ({
       );
 
       setPost(newReviews);
-      window.location.reload();
     } catch (err) {
       console.error(err);
     }
@@ -89,8 +88,8 @@ const ReviewList = ({
   return (
     <div>
       {showTitle && <h3>{title}</h3>}
-      {reviews &&
-        reviews.map((review) => (
+      {post &&
+        post.map((review) => (
           <div key={review._id} className="card mb-3">
             <h4 className="card-header bg-info text-light p-2 m-0">
               {showUsername ? (
@@ -100,7 +99,7 @@ const ReviewList = ({
                 >
                   {review.reviewAuthor} <br />
                   <span style={{ fontSize: "1rem" }}>
-                    Review for {review.movieTitle} <br/>
+                    Review for {review.movieTitle} <br />
                     posted on {review.createdAt}
                   </span>
                 </Link>
@@ -113,12 +112,12 @@ const ReviewList = ({
               )}
             </h4>
             <div>
-            <img
-                    alt={review.movieTitle}
-                    className="img-fluid"
-                    src={review.movieImg}
-                    style={{ margin: '0 auto' }}
-                  />
+              <img
+                alt={review.movieTitle}
+                className="img-fluid"
+                src={review.movieImg}
+                style={{ margin: "0 auto" }}
+              />
             </div>
             <div>
               {review.reviewAuthor === user.username && editMode ? (

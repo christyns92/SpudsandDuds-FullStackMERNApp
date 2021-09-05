@@ -10,7 +10,7 @@ import ReviewForm from "./ReviewForm";
 import MovieDetail from "./MovieDetail";
 import API from "../utils/API";
 
-class OmdbContainer extends Component {
+class MovieContainer extends Component {
   state = {
     result: {},
     search: ""
@@ -85,4 +85,4 @@ class OmdbContainer extends Component {
   }
 }
 
-export default OmdbContainer;
+export default MovieContainer;

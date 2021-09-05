@@ -4,7 +4,6 @@ import Col from "../Col";
 import Card from "../Card";
 import Auth from '../../utils/auth';
 import { Button } from '@material-ui/core';
-import SearchBar from '../SearchBar'
 
 
 
