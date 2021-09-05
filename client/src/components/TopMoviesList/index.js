@@ -58,6 +58,7 @@ export default function SingleLineImageList() {
 
   return (
     <div className={classes.root, "topMovies"}>
+      <h4>Today's Popular Movies (TMDB)</h4>
       <ImageList className={classes.imageList} cols={5} rowHeight={275}>
         {data.map((movie) => (
           <ImageListItem key={movie.poster_path}>

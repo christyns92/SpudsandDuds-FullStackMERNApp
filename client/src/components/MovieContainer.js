@@ -15,9 +15,9 @@ class MovieContainer extends Component {
     search: "",
   };
 
-  // When this component mounts, search for the movie "The Matrix"
+  // When this component mounts, search for the movie "Good Burger"
   componentDidMount() {
-    this.searchMovies("Good Burger");
+    // this.searchMovies("Good Burger");
   }
 
   searchMovies = (query) => {
@@ -56,10 +56,9 @@ class MovieContainer extends Component {
         </div>
         <div className="theMovieRundown">
           <div size="md-12">
-            <div
-              heading={this.state.result.Title || "Search for a Movie to Begin"}
-            >
+            <div heading={this.state.result.Title || "Search here..."}>
               {this.state.result.Title ? (
+                <>
                 <MovieDetail
                   title={this.state.result.Title}
                   src={this.state.result.Poster}
@@ -67,13 +66,14 @@ class MovieContainer extends Component {
                   genre={this.state.result.Genre}
                   released={this.state.result.Released}
                 />
-              ) : (
-                <h3> No Results to Display </h3>
-              )}
-              <ReviewForm
+                <ReviewForm
                 title={this.state.result.Title}
                 src={this.state.result.Poster}
               />
+              </>
+              ) : (
+                <h3> Search for a Movie to Leave a Review </h3>
+              )}
             </div>
           </div>
         </div>
