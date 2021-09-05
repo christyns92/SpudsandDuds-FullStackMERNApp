@@ -53,7 +53,7 @@ export default function SingleLineImageList() {
     console.log(data);
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root, "topMovies"}>
       <ImageList className={classes.imageList} cols={5} rowHeight={275}>
         {data.map((movie) => (
           <ImageListItem key={movie.poster_path}>

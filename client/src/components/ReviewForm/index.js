@@ -62,28 +62,25 @@ const ReviewForm = () => {
 
   return (
     <div>
-      <h3>
-        Have a movie on your mind? Share your personal movie reviews with
-        friends!
-      </h3>
+
+      <br></br>
+      
+      
 
       {Auth.loggedIn() ? (
-        <>
-          <p
-            className={`m-0 ${
-              characterCount === 280 || error ? "text-danger" : ""
-            }`}
-          >
-            Character Count: {characterCount}/280
-          </p>
+        
+      <div className="reviewContainer">
+      <h3> Was this movie a Spud or Dud? Write a review now!</h3>
+      
+
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9">
+            <div className="col-12 col-lg-9 no-padding">
               <textarea
                 name="reviewText"
-                placeholder="Here's a new review..."
+                placeholder="my Spud or Dud review..."
                 value={reviewText}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -92,8 +89,7 @@ const ReviewForm = () => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Review
+              <button className="btn btn-info py-3" type="submit">Submit
               </button>
             </div>
             {error && (
@@ -102,7 +98,7 @@ const ReviewForm = () => {
               </div>
             )}
           </form>
-        </>
+          </div>
       ) : (
         <p>
           You need to be logged in to share your reviews. Please{" "}

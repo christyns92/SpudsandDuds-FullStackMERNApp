@@ -19,21 +19,13 @@ const Home = () => {
       <div className="flex-row justify-center">
       <div
           className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
+          style={{ border: 'none' }}
         >
           <TopMoviesList />
         </div>
-        {/* <div
-          className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a', maxwidth: '727px;' }}
-        >
-          <ReviewForm />
-
-        </div> */}
-
         <div
           className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a', maxwidth: '727px;' }}
+          style={{ border: 'none', maxwidth: '727px' }}
         >
           <OmdbContainer/>    
         </div>

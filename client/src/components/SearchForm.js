@@ -70,15 +70,17 @@ const useStyles = makeStyles((theme) => ({
 function SearchForm(props) {
   const classes = useStyles();
   return (
-      <div className={classes.search}>
-         <div className={classes.searchIcon}>
+      <div className={classes.search, "row"}>
+        <div className="col-5">
+        <span className={classes.searchIcon}>
             <SearchIcon />
-         </div>
+         </span>
          <InputBase
-         placeholder="Search For a Movie"
+         placeholder="Search For a Movie..."
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
+                
               }}
               inputProps={{ 'aria-label': 'search' }}
               onChange={props.handleInputChange}
@@ -89,14 +91,18 @@ function SearchForm(props) {
           
           id="search"
             />
- <br />
-<button
+        </div>
+         
+        <div className="col-3">
+        <button
           onClick={props.handleFormSubmit}
-          className="btn btn-primary"
+          className="btn btn-info btn-lg m-2 searchButton"
           type="submit"
         >
           Search
         </button>
+      </div>
+          
       </div>
 
 
