@@ -1305,6 +1305,8 @@ a:hover {
     border-radius: 10px;
     border: 2px solid #9d6931 !important;
     background-color: #634729 !important;
+    width: 60%;
+    text-align: center;
 }
 
 .card .card-header {
