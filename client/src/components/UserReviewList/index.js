@@ -18,6 +18,11 @@ const UserReviewList = ({
     editText: {
       border: "2px solid rgb(112, 70, 46)",
       borderRadius: "4px",
+      margin: "2px",
+    },
+    isRounded: {
+      borderRadius: "10px",
+      margin: "2px",
     },
   };
 
@@ -78,8 +83,8 @@ const UserReviewList = ({
         <>
           {post
             ? post.map((review) => (
-                <div key={review._id} className="card mb-3">
-                  <h4 className="card-header bg-primary text-light p-2 m-0">
+                <div key={review._id} className="card mb-3" style={styles.isRounded}>
+                  <h4 style={styles.isRounded} className="card-header bg-primary text-light p-2 m-0">
                     {showUsername ? (
                       <Link
                         className="text-light"
@@ -125,7 +130,7 @@ const UserReviewList = ({
                     </div>
                   </div>
                   {editMode ? (
-                    <div className="card-body bg-light p-2">
+                    <div style={styles.isRounded} className="card-body bg-light p-2">
                       <p
                         style={styles.editText}
                         contentEditable="true"
@@ -159,6 +164,7 @@ const UserReviewList = ({
                     Delete
                   </button>
                   <Link
+                    style={styles.isRounded}
                     className="btn btn-primary btn-block btn-squared"
                     to={`/reviews/${review._id}`}
                   >
