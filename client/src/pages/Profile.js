@@ -41,6 +41,14 @@ const Profile = () => {
     );
   }
 
+  // Reload profile page once to get most recent reviews
+  window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+};
+
   return (
     <div>
       <div className="flex-row justify-center mb-3">

@@ -25,12 +25,14 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview($reviewText: String!) {
-    addReview(reviewText: $reviewText) {
+  mutation addReview($reviewText: String!, $movieTitle: String!, $movieImg: String!) {
+    addReview(reviewText: $reviewText, movieTitle: $movieTitle, movieImg: $movieImg) {
       _id
       reviewText
       reviewAuthor
       createdAt
+      movieTitle
+      movieImg
       comments {
         _id
         commentText
@@ -46,6 +48,8 @@ export const ADD_COMMENT = gql`
       reviewText
       reviewAuthor
       createdAt
+      movieTitle
+      movieImg
       comments {
         _id
         commentText
@@ -58,6 +62,14 @@ export const ADD_COMMENT = gql`
 export const REMOVE_REVIEW = gql`
   mutation removeReview($reviewId: ID!) {
     removeReview(reviewId: $reviewId) {
+      _id
+    }
+  }
+`;
+
+export const REMOVE_MAINREVIEW = gql`
+  mutation removeMainReview($reviewId: ID!) {
+    removeMainReview(reviewId: $reviewId) {
       _id
     }
   }

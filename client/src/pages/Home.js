@@ -35,7 +35,7 @@ const Home = () => {
           ) : (
             <ReviewList
               reviews={reviews}
-              title="Some Feed for Review(s)..."
+              title="Recently Reviewed Spuds & Duds"
             />
           )}
         </div>
