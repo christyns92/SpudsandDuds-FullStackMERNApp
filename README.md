@@ -3,6 +3,8 @@
 Spuds and Duds: a Social Movie Review Application<br><br>
 Link to live deployed app: https://spudsandduds.herokuapp.com/
 
+# Purpose
+Having a place where you can share your thoughts on a movie is every movie buffs passion. With Spuds and Duds we wanted to create a community that does just that.
 
 ## Technologies Used
 This project was created and deployed using React, MaterialUI, GraphQL, JWT, JavaScript, node.js (and associated packages), express.js, MongoDB, Axios, TMDB API, OMDB API, Bootstrp, HTML, CSS, and Heroku. 
