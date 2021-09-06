@@ -24,8 +24,8 @@ function Like() {
   return (
     <div className="App">
       <h3>{count}</h3>
-      <button onClick={increaseCount}><ThumbUpIcon></ThumbUpIcon></button>
-      <button onClick={decreaseCount}><ThumbDownIcon></ThumbDownIcon></button>
+      <button className="likeIcon" onClick={increaseCount}><ThumbUpIcon></ThumbUpIcon></button>
+      <button className="likeIcon" onClick={decreaseCount}><ThumbDownIcon></ThumbDownIcon></button>
     </div>
   );
 }
