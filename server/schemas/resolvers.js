@@ -97,18 +97,6 @@ const resolvers = {
       console.log(review);
       return review;
     },
-    editComment: async (_, { reviewId, reviewText }) => {
-      const review = await Review.findOneAndUpdate(
-        { _id: reviewId },
-        { reviewText: reviewText },
-        { new: true }
-      );
-      if (!review) {
-        throw new Error(`Couldn’t find review with id ${reviewId}`);
-      }
-      console.log(review);
-      return review;
-    },
     removeReview: async (parent, { reviewId }, context) => {
       if (context.user) {
         const review = await Review.findOneAndDelete({
@@ -123,23 +111,6 @@ const resolvers = {
         );
 
         return review;
-      }
-      throw new AuthenticationError("You need to be logged in!");
-    },
-    removeComment: async (parent, { reviewId, commentId }, context) => {
-      if (context.user) {
-        return Review.findOneAndUpdate(
-          { _id: reviewId },
-          {
-            $pull: {
-              comments: {
-                _id: commentId,
-                commentAuthor: context.user.username,
-              },
-            },
-          },
-          { new: true }
-        );
       }
       throw new AuthenticationError("You need to be logged in!");
     },

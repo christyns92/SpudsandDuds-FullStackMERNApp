@@ -69,7 +69,7 @@ const SingleReview = () => {
       </div>
 
       <div className="my-5">
-        <CommentList comments={review.comments} />
+        <CommentList comments={review.comments} reviewId={review._id} />
       </div>
       <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
         <CommentForm reviewId={review._id} />
