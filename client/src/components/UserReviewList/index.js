@@ -7,6 +7,7 @@ import { EDIT_REVIEW } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 
+
 const UserReviewList = ({
   reviews,
   title,
@@ -129,7 +130,7 @@ const UserReviewList = ({
                     </div>
                   </div>
                   {editMode ? (
-                    <div style={styles.isRounded} className="card-body bg-light p-2">
+                    <div style={styles.isRounded} className="card-body bg-info p-2">
                       <p
                         style={styles.editText}
                         contentEditable="true"
@@ -143,7 +144,7 @@ const UserReviewList = ({
                       <button>Finish Edit</button>
                     </div>
                   ) : (
-                    <div className="card-body bg-light p-2">
+                    <div className="card-body bg-info p-2">
                       <p>{review.reviewText}</p>
                     </div>
                   )}

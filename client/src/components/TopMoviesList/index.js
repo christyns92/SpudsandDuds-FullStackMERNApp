@@ -6,7 +6,7 @@ import ImageListItem from "@material-ui/core/ImageListItem";
 import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 import IconButton from "@material-ui/core/IconButton";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteIcon from "@material-ui/icons/Favorite";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -30,8 +30,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 // const thatssofetchALL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=1f0c12a5a877dc629a002fa2c6169442&language=en-US&page=1&include_adult=false'
 
-const BASE_URL = "https://api.themoviedb.org/3";
-const api_key = "1f0c12a5a877dc629a002fa2c6169442";
+const BASE_URL = process.env.REACT_APP_BASEURL_TMDB;
+const api_key = process.env.REACT_APP_APIKEY_TMDB;
 const getImage = (path) => `https://image.tmdb.org/t/p/w200/${path}`;
 
 export default function SingleLineImageList() {
@@ -41,9 +41,12 @@ export default function SingleLineImageList() {
 
   const api = axios.create({ baseURL: BASE_URL });
 
-  const getNowPlaying = api.get(`movie/now_playing?${api_key}&language=en-US&page=1`, {
-    params: { api_key },
-  });
+  const getNowPlaying = api.get(
+    `movie/now_playing?${api_key}&language=en-US&page=1`,
+    {
+      params: { api_key },
+    }
+  );
 
   useEffect(() => {
     getNowPlaying.then((res) => {
@@ -51,22 +54,30 @@ export default function SingleLineImageList() {
     });
   }, []);
 
-    console.log(data);
+  console.log(data);
 
-    const [movieTitle, setMovieTitle] = useState("");
+  const [movieTitle, setMovieTitle] = useState("");
 
-    const sendTitle = (value) => {
-      console.log(value)
-      setMovieTitle(value);
-    };
+  const sendTitle = (value) => {
+    console.log(value);
+    setMovieTitle(value);
+  };
 
   return (
-    <div className={classes.root, "topMovies"}>
+    <div className="container">
+    <div className={(classes.root, "topMovies theMovieRundown col-12 col-md-10 mb-3 p-3")}>
       <h4>Today's Popular Movies (TMDB)</h4>
       <ImageList className={classes.imageList} cols={5} rowHeight={275}>
         {data.map((movie) => (
           <ImageListItem key={movie.poster_path}>
-            <img src={getImage(movie.poster_path)} alt={movie.original_title} value={movie.original_title} onClick={(e) => {sendTitle(movie.original_title)}} />
+            <img
+              src={getImage(movie.poster_path)}
+              alt={movie.original_title}
+              value={movie.original_title}
+              onClick={(e) => {
+                sendTitle(movie.original_title);
+              }}
+            />
             <ImageListItemBar
               classes={{
                 root: classes.titleBar,
@@ -81,6 +92,7 @@ export default function SingleLineImageList() {
           </ImageListItem>
         ))}
       </ImageList>
+    </div>
     </div>
   );
 }
