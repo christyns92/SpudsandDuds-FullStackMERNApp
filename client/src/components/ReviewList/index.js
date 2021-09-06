@@ -87,8 +87,6 @@ const ReviewList = ({
   const [editMode, setEditMode] = useState(false);
   console.log(editMode);
 
-  // let rating = 3;
-
   if (!reviews.length) {
     return <h3>No Reviews Yet</h3>;
   }
@@ -117,8 +115,6 @@ const ReviewList = ({
                   </span>
                 </Link>
                 <span style={{ fontSize: "1rem" }}>
-                <h2>{review.movieTitle} </h2><br/>
-                posted on {review.createdAt}
               </span>
 
                 </div>
