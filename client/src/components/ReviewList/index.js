@@ -219,10 +219,9 @@ const ReviewList = ({
 
             {/* end of right hand side div */}
             </div>
-            
-          
-     
-            
+
+            <Like reviewId={review._id} />
+
             <Link
              
               className="btn btn-info btn-block theMovieRundown no-radius-tl no-radius-tr"
