@@ -196,7 +196,7 @@ const ReviewList = ({
                 </div>
               ) : null}
             </div>
-            <Like />
+            <Like reviewId={review._id} />
             <Link
               style={styles.isRounded}
               className="btn btn-info btn-block btn-squared"
