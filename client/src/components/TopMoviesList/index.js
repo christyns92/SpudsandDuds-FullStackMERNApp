@@ -6,7 +6,7 @@ import ImageListItem from "@material-ui/core/ImageListItem";
 import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 import IconButton from "@material-ui/core/IconButton";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteIcon from "@material-ui/icons/Favorite";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -40,9 +40,12 @@ export default function SingleLineImageList() {
 
   const api = axios.create({ baseURL: BASE_URL });
 
-  const getNowPlaying = api.get(`movie/now_playing?${api_key}&language=en-US&page=1`, {
-    params: { api_key },
-  });
+  const getNowPlaying = api.get(
+    `movie/now_playing?${api_key}&language=en-US&page=1`,
+    {
+      params: { api_key },
+    }
+  );
 
   useEffect(() => {
     getNowPlaying.then((res) => {
@@ -50,22 +53,29 @@ export default function SingleLineImageList() {
     });
   }, []);
 
-    console.log(data);
+  console.log(data);
 
-    const [movieTitle, setMovieTitle] = useState("");
+  const [movieTitle, setMovieTitle] = useState("");
 
-    const sendTitle = (value) => {
-      console.log(value)
-      setMovieTitle(value);
-    };
+  const sendTitle = (value) => {
+    console.log(value);
+    setMovieTitle(value);
+  };
 
   return (
-    <div className={classes.root, "topMovies"}>
+    <div className={(classes.root, "topMovies")}>
       <h4>Today's Popular Movies (TMDB)</h4>
       <ImageList className={classes.imageList} cols={5} rowHeight={275}>
         {data.map((movie) => (
           <ImageListItem key={movie.poster_path}>
-            <img src={getImage(movie.poster_path)} alt={movie.original_title} value={movie.original_title} onClick={(e) => {sendTitle(movie.original_title)}} />
+            <img
+              src={getImage(movie.poster_path)}
+              alt={movie.original_title}
+              value={movie.original_title}
+              onClick={(e) => {
+                sendTitle(movie.original_title);
+              }}
+            />
             <ImageListItemBar
               classes={{
                 root: classes.titleBar,

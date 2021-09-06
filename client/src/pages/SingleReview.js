@@ -64,7 +64,7 @@ const SingleReview = () => {
             lineHeight: "1.5",
           }}
         >
-          {review.reviewText}
+          "{review.reviewText}"
         </blockquote>
       </div>
 
