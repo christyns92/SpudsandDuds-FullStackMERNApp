@@ -117,8 +117,6 @@ const ReviewList = ({
                   </span>
                 </Link>
                 <span style={{ fontSize: "1rem" }}>
-                <h2>{review.movieTitle} </h2><br/>
-                posted on {review.createdAt}
               </span>
 
                 </div>
