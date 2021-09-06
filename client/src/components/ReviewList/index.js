@@ -220,8 +220,8 @@ const ReviewList = ({
 
             {/* end of right hand side div */}
             </div>
-            
             <Link
+             
               className="btn btn-info btn-block theMovieRundown no-radius-tl no-radius-tr"
               to={`/reviews/${review._id}`}
             >
