@@ -122,7 +122,32 @@ abbr[title] {
     /* 2 */
 }
 
+p {
+    color: rgb(236, 225, 220);
+    font-style:italic;
+    margin-top:10px;
+    font-size:20px;
+}
 
+.timeStamp {
+ margin-right:40px;
+ text-align:right;
+}
+
+.likeIcon>svg {
+width: 2em;
+height:2em;
+color: rgb(226, 211, 192);
+margin: 5px;
+}
+
+.hiddenDiv {
+    height: 50px;
+}
+
+.likeCountContainer {
+ margin-top:20px;
+}
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
@@ -132,11 +157,49 @@ strong {
     font-weight: bolder;
 }
 
-.reviewListposter {
-    max-width: 100px;
+.no-radius-tl {
+    border-top-left-radius: 0px !important;
+}
+
+.no-radius-tr {
+    border-top-right-radius: 0px !important;
+}
+
+.theMovieRundown .no-radius-tl .no-radius-tr {
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px!important;
+}
+
+.edit-review {
+    margin:10px !important;
+}
+
+.reviewListContainer {
+    margin: 0!important;
+}
+
+.posterContainer {
+    margin: 15px 0 0 0!important;
+    padding: 10px 0 0 0 !important;
 }
 
 
+.reviewContainer {
+    margin: 15px 0 0 0 !important;
+    padding: 0 10px 0 10px !important;
+}
+.reviewListPoster {
+    max-width: 250px;
+}
+
+.reviewList.potato-rating {
+    text-align: right;
+    margin-top: 5px;
+}
+
+.reviewList .potato {
+   font-size: 40px;
+}
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
@@ -1086,7 +1149,7 @@ a:hover {
 }
 
 .text-info {
-    color: #1bbc9b !important;
+    color: #e6bd98 !important;
 }
 
 .text-danger {
@@ -1098,11 +1161,11 @@ a:hover {
 }
 
 .text-light {
-    color: #d9e9e8 !important;
+    color: #e9e3d9 !important;
 }
 
 .text-dark {
-    color: #1b89bc !important;
+    color: #cab4a2 !important;
 }
 
 .text-white {
@@ -1121,7 +1184,7 @@ a:hover {
 /* BACKGROUND UTILS */
 
 .bg-primary {
-    background-color: #72481b !important;
+    background-color: #634729 !important;
 }
 
 .bg-info {
@@ -1308,7 +1371,7 @@ a:hover {
     border-radius: 10px;
     border: 2px solid #9d6931 !important;
     background-color: #634729 !important;
-    width: 60%;
+   
     text-align: center;
 }
 
@@ -1321,6 +1384,8 @@ a:hover {
 .card .card-body {
     padding: 0.375rem;
 }
+
+
 
 .card .card-footer {
     border-top: 1px solid #1a1a1a;
