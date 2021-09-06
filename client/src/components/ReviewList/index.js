@@ -126,6 +126,7 @@ const ReviewList = ({
                   ><h3 className="">
                     {review.reviewAuthor}
                   </h3></Link>
+                  <br/>
                   <h6> reviewed</h6>
                   <div className="col-lg-8 reviewList potato-rating text-align-right">
                 {[...Array(5)].map((potato, index) => {
@@ -203,7 +204,7 @@ const ReviewList = ({
                   <p>{review.reviewText}</p>
                 </div>
               )}
-           
+        
            <h6 className="timeStamp">
                       on {review.createdAt}
                     </h6>

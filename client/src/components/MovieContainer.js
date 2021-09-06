@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Container from "./Container";
 import SearchForm from "./SearchForm";
 import ReviewForm from "./ReviewForm";
-// import PotatoRating from "./PotatoRating/PotatoRating";
 import MovieDetail from "./MovieDetail";
 import API from "../utils/API";
 
@@ -11,11 +10,6 @@ class MovieContainer extends Component {
     result: {},
     search: "",
   };
-
-  // When this component mounts, search for the movie "Good Burger"
-  componentDidMount() {
-    // this.searchMovies("Good Burger");
-  }
 
   searchMovies = (query) => {
     API.search(query)
@@ -31,7 +25,7 @@ class MovieContainer extends Component {
     });
   };
 
-  // When the form is submitted, search the OMDB API for the value of `this.state.search`
+  // When the form is submitted, search the OMDB API for the value of `this.state.search` aka Movie Title
   handleFormSubmit = (event) => {
     event.preventDefault();
     this.searchMovies(this.state.search);
