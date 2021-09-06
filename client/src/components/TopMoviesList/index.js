@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
       "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
   },
 }));
-// const thatssofetchALL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=1f0c12a5a877dc629a002fa2c6169442&language=en-US&page=1&include_adult=false'
 
 const BASE_URL = process.env.REACT_APP_BASEURL_TMDB;
 const api_key = process.env.REACT_APP_APIKEY_TMDB;

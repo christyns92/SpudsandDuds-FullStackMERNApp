@@ -69,14 +69,6 @@ export const REMOVE_REVIEW = gql`
   }
 `;
 
-export const REMOVE_MAINREVIEW = gql`
-  mutation removeMainReview($reviewId: ID!) {
-    removeMainReview(reviewId: $reviewId) {
-      _id
-    }
-  }
-`;
-
 export const REMOVE_COMMENT = gql`
   mutation removeComment($reviewId: ID!, $commentId: ID!) {
     removeComment(reviewId: $reviewId, commentId: $commentId) {
@@ -97,18 +89,15 @@ export const EDIT_REVIEW = gql`
   }
 `;
 
-export const EDIT_COMMENT = gql`
-  mutation editComment($reviewId: ID!, $commentId: ID!, $commentText: String!) {
-    editComment(
-      reviewId: $reviewId
-      commentId: $commentId
-      commentText: $commentText
-    ) {
-      _id
-      comments {
-        _id
-        commentText
-      }
-    }
-  }
-`;
+// export const EDIT_COMMENT = gql`
+//   mutation editComment($reviewId: ID!, $commentId: ID!, $commentText: String!) {
+//     editComment(reviewId: $reviewId, commentId: $commentId, commentText: $commentText
+//     ) {
+//       _id
+//       comments {
+//         _id
+//         commentText
+//       }
+//     }
+//   }
+// `;

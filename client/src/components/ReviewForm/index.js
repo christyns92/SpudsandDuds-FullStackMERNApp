@@ -6,7 +6,6 @@ import "../PotatoRating/PotatoRating.css";
 import { ADD_REVIEW } from "../../utils/mutations";
 import { QUERY_REVIEWS, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
-// import PotatoRating from "../PotatoRating/PotatoRating";
 
 const ReviewForm = (props) => {
   const [reviewText, setReviewText] = useState("");
@@ -26,9 +25,8 @@ const ReviewForm = (props) => {
         console.error(e);
       }
 
-      // update me object's cache
+      // update the me object's cache
       const { me } = cache.readQuery({ query: QUERY_ME });
-      console.log(me);
       cache.writeQuery({
         query: QUERY_ME,
         data: { me: { ...me, reviews: [...me.reviews, addReview] } },
@@ -83,7 +81,6 @@ const ReviewForm = (props) => {
       <h3>Was this movie a Spud or Dud?</h3>
       <div className="row">
         <br></br>
-      {/* <h5 className="col-12">Give it a rating and leave a review!</h5> */}
       <div className="potato-rating">
       {[...Array(5)].map((potato, index) => {
         index += 1;
@@ -101,10 +98,7 @@ const ReviewForm = (props) => {
         );
       })}
     </div>
-
       </div>
-      
-      
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
