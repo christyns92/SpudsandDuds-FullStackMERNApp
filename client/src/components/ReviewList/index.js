@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { REMOVE_REVIEW } from "../../utils/mutations";
 import { EDIT_REVIEW } from "../../utils/mutations";
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
@@ -94,66 +96,93 @@ const ReviewList = ({
   }
 
   return (
-    <div>
-      {showTitle && <h3 className="text-align-center">{title}</h3>}
+    <div className="theMovieRundown">
+      {showTitle && <h3 className="text-align-left">{title}</h3>}
       {post &&
         post.map((review) => (
-          <div key={review._id} className="mx-auto card mb-3" style={styles.isRounded}>
-            <h4
-              style={styles.isRounded}
-              className="card-header bg-info text-light p-2 m-0"
-            >
-              {showUsername ? (
-                <div>
-
-                <Link
-                  className="text-light col-6"
-                  to={`/profiles/${review.reviewAuthor}`}
-                >
-                  {review.reviewAuthor} <br />
-                  <span style={{ fontSize: "1rem" }}>
-                    Review for {review.movieTitle} <br />
-                    posted on {review.createdAt}
-                  </span>
-                </Link>
-                <span style={{ fontSize: "1rem" }}>
-              </span>
-
-                </div>
-                
-              ) : (
-                <>
-                  <span style={{ fontSize: "1rem" }}>
-                    You had this review on {review.createdAt}
-                  </span>
-                </>
-              )}
-            </h4>
-            <div>
+          <div key={review._id} className="mx-auto card mb-4 row reviewListContainer" >
+             
+            <div className="col-lg-4 col-md-12 posterContainer bg-primary">
               <img
                 alt={review.movieTitle}
-                className="img-fluid"
+                className="img-fluid reviewListPoster"
                 src={review.movieImg}
-                style={{ margin: "0 auto" }}
               />
             </div>
-            <div className="potato-rating">
-              {[...Array(5)].map((potato, index) => {
-                index += 1;
-                return (
+            <div className="col-lg-8 col-md-12 reviewContainer bg-primary">
+            
+
+
+              <h4  
+                className="card-header bg-primary text-light p-2 text-align-left"
+              >
+                {showUsername ? (
+                  <div>
+
+                  <div className="row">
+                  <Link
+                    className="text-light col-lg-4 col-md-12"
+                    to={`/profiles/${review.reviewAuthor}`}
+                  ><h3 className="">
+                    {review.reviewAuthor}
+                  <h6> reviewed</h6></h3></Link>
+
+                  <div className="col-lg-8 reviewList potato-rating text-align-right">
+                {[...Array(5)].map((potato, index) => {
+                  index += 1;
+                  return (
+                    <button
+                      type="button"
+                      key={index}
+                      className={index <= (review.potatoRating) ? "on" : "off"}
+                    >
+                      <span className="potato">&#129364; </span>
+
+                    </button>
+                  );
+                })}
+              </div>
+
+
+                  <h3 className="col-md-12 text-info">
+                  {review.movieTitle}
+                  </h3>
+                  </div>
+
+                  </div>
+                  
+                ) : (
+                  <>
+                    <span style={{ fontSize: "1rem" }}>
+                      You had this review on {review.createdAt}
+                    </span>
+                  </>
+                )}
+              </h4>
+              
+              <div>
+              {review.reviewAuthor === user.username ? (
+                <div className="text-align-right">
+
                   <button
+                    onClick={() => setEditMode(true)}
                     type="button"
-                    key={index}
-                    className={index <= (review.potatoRating) ? "on" : "off"}
-                  >
-                    <span className="potato">&#129364;</span>
-                  </button>
-                );
-              })}
+                    className="btn btn-info edit-review"
+                  ><EditIcon/></button>
+
+                  <button
+                    onClick={(event) => {
+                      removeReviewHandler(event, review._id);
+                    }}
+                    className="btn btn-info delete-review"
+                  ><DeleteIcon/></button>
+                </div>
+              ) : (<div className="hiddenDiv"></div>)}
             </div>
-            <div style={styles.isRounded}>
+
+              <div >
               {review.reviewAuthor === user.username && editMode ? (
-                <div className="card-body bg-light p-2">
+                <div className="card-body bg-primary p-2 theMovieRundown">
                   <p
                     style={styles.editText}
                     contentEditable="true"
@@ -164,42 +193,38 @@ const ReviewList = ({
                   >
                     {review.reviewText}
                   </p>
-                  <button>Finish Edit</button>
+                  <button className="btn btn-info edit-review">Finish Edit</button>
                 </div>
               ) : (
                 <div
-                  style={styles.isRounded}
-                  className="card-body bg-light p-2"
+                 
+                  className="card-body theMovieRundown bg-info p-2"
                 >
                   <p>{review.reviewText}</p>
                 </div>
               )}
+           
+           <h6 className="timeStamp">
+                      on {review.createdAt}
+                    </h6>
+                  
+            
+
             </div>
-            <div>
-              {review.reviewAuthor === user.username ? (
-                <div>
-                  <button
-                    onClick={() => setEditMode(true)}
-                    type="button"
-                    className="btn btn-default edit-review"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={(event) => {
-                      removeReviewHandler(event, review._id);
-                    }}
-                    className="btn btn-default delete-review"
-                  >
-                    Delete
-                  </button>
-                </div>
-              ) : null}
+        {/* <h3>How was this review?</h3> */}
+        <div className="likeCountContainer text-align-center">
+        <Like />
+        </div> 
+            
+
+            {/* end of right hand side div */}
             </div>
+
             <Like reviewId={review._id} />
+
             <Link
-              style={styles.isRounded}
-              className="btn btn-info btn-block btn-squared"
+             
+              className="btn btn-info btn-block theMovieRundown no-radius-tl no-radius-tr"
               to={`/reviews/${review._id}`}
             >
               Join the discussion on this review.
