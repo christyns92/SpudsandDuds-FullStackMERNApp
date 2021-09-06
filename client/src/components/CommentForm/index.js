@@ -41,7 +41,7 @@ const CommentForm = ({ reviewId }) => {
 
   return (
     <div>
-      <h4>What are your reviews on this review?</h4>
+      <h4>What are your thoughts on this review?</h4>
 
       {Auth.loggedIn() ? (
         <>
@@ -54,7 +54,7 @@ const CommentForm = ({ reviewId }) => {
             {error && <span className="ml-2">{error.message}</span>}
           </p>
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            className="mx-auto w-75 flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">

@@ -29,6 +29,10 @@ const reviewSchema = new Schema({
     required: true,
     trim: true,
   },
+  potatoRating: {
+    type: Number,
+    required: true,
+  },
   comments: [
     {
       commentText: {

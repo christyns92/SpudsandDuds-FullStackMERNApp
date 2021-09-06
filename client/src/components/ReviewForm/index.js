@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
+import "../PotatoRating/PotatoRating.css";
 
 import { ADD_REVIEW } from "../../utils/mutations";
 import { QUERY_REVIEWS, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
-import PotatoRating from "../PotatoRating/PotatoRating";
+// import PotatoRating from "../PotatoRating/PotatoRating";
 
 const ReviewForm = (props) => {
   const [reviewText, setReviewText] = useState("");
@@ -47,18 +48,20 @@ const ReviewForm = (props) => {
           reviewText,
           reviewAuthor: Auth.getProfile().data.username,
           movieTitle: movieTitle,
-          movieImg: movieImg
+          movieImg: movieImg, 
+          potatoRating: rating
         },
       });
 
       setReviewText("");
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target;  
 
     if (name === "reviewText" && value.length <= 280) {
       setReviewText(value);
@@ -66,21 +69,38 @@ const ReviewForm = (props) => {
     }
   };
 
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
+
+
   return (
     <div>
 
       <br></br>
-      
-      
-
       {Auth.loggedIn() ? (
         
       <div className="reviewContainer">
       <h3>Was this movie a Spud or Dud?</h3>
       <div className="row">
         <br></br>
-      <h5 className="col-12">Give it a rating and leave a review!</h5>
-      <div className="col-12"><PotatoRating/></div>
+      {/* <h5 className="col-12">Give it a rating and leave a review!</h5> */}
+      <div className="potato-rating">
+      {[...Array(5)].map((potato, index) => {
+        index += 1;
+        return (
+          <button
+            type="button"
+            key={index}
+            className={index <= (hover || rating) ? "on" : "off"}
+            onClick={() => setRating(index)}
+            onMouseEnter={() => setHover(index)}
+            onMouseLeave={() => setHover(rating)}
+          >
+            <span className="potato">&#129364;</span>
+          </button>
+        );
+      })}
+    </div>
 
       </div>
       

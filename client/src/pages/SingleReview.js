@@ -24,8 +24,8 @@ const SingleReview = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
+    <div className="text-align-center my-3">
+      <h3 className="text-align-center card-header bg-dark text-light p-2 m-0">
         {review.reviewAuthor} <br />
         <span style={{ fontSize: "1rem" }}>
           Review for {review.movieTitle} <br />
@@ -39,8 +39,22 @@ const SingleReview = () => {
           src={review.movieImg}
           style={{ margin: "0 auto" }}
         />
+        <div className="potato-rating">
+              {[...Array(5)].map((potato, index) => {
+                index += 1;
+                return (
+                  <button
+                    type="button"
+                    key={index}
+                    className={index <= (review.potatoRating) ? "on" : "off"}
+                  >
+                    <span className="potato">&#129364;</span>
+                  </button>
+                );
+              })}
+            </div>
       </div>
-      <div className="bg-light py-4">
+      <div className="w-50 text-align-center mx-auto bg-light py-4">
         <blockquote
           className="p-4"
           style={{

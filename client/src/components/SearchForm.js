@@ -75,7 +75,7 @@ function SearchForm(props) {
           <SearchIcon />
         </span>
         <InputBase
-          placeholder="Search For a Movie..."
+          placeholder="Search..."
           classes={{
             root: classes.inputRoot,
             input: classes.inputInput,

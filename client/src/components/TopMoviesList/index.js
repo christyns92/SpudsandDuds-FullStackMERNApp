@@ -6,7 +6,7 @@ import ImageListItem from "@material-ui/core/ImageListItem";
 import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 import IconButton from "@material-ui/core/IconButton";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
-
+import FavoriteIcon from '@material-ui/icons/Favorite';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
       "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
   },
 }));
+// const thatssofetchALL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=1f0c12a5a877dc629a002fa2c6169442&language=en-US&page=1&include_adult=false'
 
 const BASE_URL = "https://api.themoviedb.org/3";
 const api_key = "1f0c12a5a877dc629a002fa2c6169442";
@@ -40,7 +41,7 @@ export default function SingleLineImageList() {
 
   const api = axios.create({ baseURL: BASE_URL });
 
-  const getNowPlaying = api.get("movie/now_playing", {
+  const getNowPlaying = api.get(`movie/now_playing?${api_key}&language=en-US&page=1`, {
     params: { api_key },
   });
 
@@ -52,12 +53,16 @@ export default function SingleLineImageList() {
 
     console.log(data);
 
+    const [movieTitle, setMovieTitle] = useState("");
+
     const sendTitle = (value) => {
       console.log(value)
+      setMovieTitle(value);
     };
 
   return (
     <div className={classes.root, "topMovies"}>
+      <h4>Today's Popular Movies (TMDB)</h4>
       <ImageList className={classes.imageList} cols={5} rowHeight={275}>
         {data.map((movie) => (
           <ImageListItem key={movie.poster_path}>
@@ -69,7 +74,7 @@ export default function SingleLineImageList() {
               }}
               actionIcon={
                 <IconButton aria-label={`star ${movie.original_title}`}>
-                  <StarBorderIcon className={classes.title} />
+                  <FavoriteIcon className={classes.title} />
                 </IconButton>
               }
             />

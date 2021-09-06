@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
+import Like from "../Like"
 
 const ReviewList = ({
   reviews,
@@ -20,6 +21,11 @@ const ReviewList = ({
     editText: {
       border: "2px solid rgb(112, 70, 46)",
       borderRadius: "4px",
+      margin: "2px",
+    },
+    isRounded: {
+      borderRadius: "10px",
+      margin: "2px",
     },
   };
 
@@ -32,7 +38,7 @@ const ReviewList = ({
 
   const user = data?.me || data?.user || {};
 
-  console.log(user.username);
+  // console.log(user.username);
 
   const [post, setPost] = useState("");
   useEffect(() => {
@@ -50,7 +56,7 @@ const ReviewList = ({
           reviewId: _id,
         },
       });
-      console.log(data);
+
       const newReviews = await post.filter(
         (r) => r._id !== data.removeReview._id
       );
@@ -81,20 +87,27 @@ const ReviewList = ({
   const [editMode, setEditMode] = useState(false);
   console.log(editMode);
 
+  // let rating = 3;
+
   if (!reviews.length) {
     return <h3>No Reviews Yet</h3>;
   }
 
   return (
     <div>
-      {showTitle && <h3>{title}</h3>}
+      {showTitle && <h3 className="text-align-center">{title}</h3>}
       {post &&
         post.map((review) => (
-          <div key={review._id} className="card mb-3">
-            <h4 className="card-header bg-info text-light p-2 m-0">
+          <div key={review._id} className="mx-auto card mb-3" style={styles.isRounded}>
+            <h4
+              style={styles.isRounded}
+              className="card-header bg-info text-light p-2 m-0"
+            >
               {showUsername ? (
+                <div>
+
                 <Link
-                  className="text-light"
+                  className="text-light col-6"
                   to={`/profiles/${review.reviewAuthor}`}
                 >
                   {review.reviewAuthor} <br />
@@ -103,6 +116,11 @@ const ReviewList = ({
                     posted on {review.createdAt}
                   </span>
                 </Link>
+                <span style={{ fontSize: "1rem" }}>
+              </span>
+
+                </div>
+                
               ) : (
                 <>
                   <span style={{ fontSize: "1rem" }}>
@@ -119,7 +137,21 @@ const ReviewList = ({
                 style={{ margin: "0 auto" }}
               />
             </div>
-            <div>
+            <div className="potato-rating">
+              {[...Array(5)].map((potato, index) => {
+                index += 1;
+                return (
+                  <button
+                    type="button"
+                    key={index}
+                    className={index <= (review.potatoRating) ? "on" : "off"}
+                  >
+                    <span className="potato">&#129364;</span>
+                  </button>
+                );
+              })}
+            </div>
+            <div style={styles.isRounded}>
               {review.reviewAuthor === user.username && editMode ? (
                 <div className="card-body bg-light p-2">
                   <p
@@ -132,9 +164,13 @@ const ReviewList = ({
                   >
                     {review.reviewText}
                   </p>
+                  <button>Finish Edit</button>
                 </div>
               ) : (
-                <div className="card-body bg-light p-2">
+                <div
+                  style={styles.isRounded}
+                  className="card-body bg-light p-2"
+                >
                   <p>{review.reviewText}</p>
                 </div>
               )}
@@ -160,7 +196,9 @@ const ReviewList = ({
                 </div>
               ) : null}
             </div>
+            <Like />
             <Link
+              style={styles.isRounded}
               className="btn btn-info btn-block btn-squared"
               to={`/reviews/${review._id}`}
             >
