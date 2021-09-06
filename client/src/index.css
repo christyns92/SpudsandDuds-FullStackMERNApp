@@ -150,7 +150,7 @@ samp {
 }
 
 .MuiInputBase-root >input {
-    background-color: rgba(30, 52%, 72%, .5) !important;
+    background-color: rgba(30, 52, 72, .5) !important;
 }
 
 .makeStyles-search-8 svg {
