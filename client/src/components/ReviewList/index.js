@@ -85,7 +85,6 @@ const ReviewList = ({
   };
 
   const [editMode, setEditMode] = useState(false);
-  // console.log(editMode);
 
   if (!reviews.length) {
     return <h3>No Reviews Yet</h3>;
