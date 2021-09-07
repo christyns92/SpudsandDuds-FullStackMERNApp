@@ -2,18 +2,25 @@
 Spuds and Duds: a Social Movie Review Application<br><br>
 Link to live deployed app: https://spudsandduds.herokuapp.com/
 
-# Purpose
+# Concept
 Having a place where you can share your thoughts on a movie is every movie buffs passion. With Spuds and Duds we wanted to create a community that does just that.
+
+# Purpose
+Spuds and Duds gives you the chance to select from a database of movies to review and post for other to see.
+<br>
+Our motivation for developing this app is to give a cinephile a community to share their opinions on movies and interact with others with the same passion. 
+<br>
+As a user, you will be able to search a movie that gives a small description and then be able to post, edit, or delete a review. you can also comment on other reviews that are posted on the feed. 
 
 # Wireframe development
 ![InitialLandingPageDesign](./client/src/images/Spuds&Duds_Wireframe1.png)
 
-![PostSearchPageDesign](./client/src/images/Spuds&Duds_Wireframe1.png)
-
-
+![PostSearchPageDesign](./client/src/images/Spuds&Duds_Wireframe2.png)
 
 # Images of Deployed Application
+![MainLandingPage](./client/src/images/SpudsAndDudsLandingPage.png)
 
+![MainReviewList](./client/src/images/MainReviewList.png)
 
 ## Technologies Used
 This project was created and deployed using React, MaterialUI, GraphQL, JWT, JavaScript, node.js (and associated packages), express.js, MongoDB, Axios, TMDB API, OMDB API, Bootstrp, HTML, CSS, and Heroku. 
@@ -37,6 +44,10 @@ Ability to share to other social media platforms.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 <br>
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Contact the contributors
 Christyn Garcia <br>
