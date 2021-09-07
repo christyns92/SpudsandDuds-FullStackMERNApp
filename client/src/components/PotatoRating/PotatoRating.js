@@ -5,8 +5,6 @@ const PotatoRating = () => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
 
-  console.log(rating);
-
   return (
     <div className="potato-rating">
       {[...Array(5)].map((potato, index) => {

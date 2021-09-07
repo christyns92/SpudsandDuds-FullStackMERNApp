@@ -53,12 +53,9 @@ export default function SingleLineImageList() {
     });
   }, []);
 
-  console.log(data);
-
   const [movieTitle, setMovieTitle] = useState("");
 
   const sendTitle = (value) => {
-    console.log(value);
     setMovieTitle(value);
   };
 

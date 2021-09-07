@@ -40,8 +40,6 @@ const ReviewList = ({
 
   const user = data?.me || data?.user || {};
 
-  // console.log(user.username);
-
   const [post, setPost] = useState("");
   useEffect(() => {
     setPost(reviews);
@@ -87,9 +85,6 @@ const ReviewList = ({
   };
 
   const [editMode, setEditMode] = useState(false);
-  console.log(editMode);
-
-  // let rating = 3;
 
   if (!reviews.length) {
     return <h3>No Reviews Yet</h3>;
