@@ -18,7 +18,7 @@ As a user, you will be able to search a movie that gives a small description and
 ![PostSearchPageDesign](./client/src/images/Spuds&Duds_Wireframe2.png)
 
 # Images of Deployed Application
-![MainLandingPage](./client/src/images/SpudsAndDudsLandingPage.png)
+![MainLandingPage](./client/src/images/MainLandingPage.png)
 
 ![MainReviewList](./client/src/images/MainReviewList.png)
 
