@@ -88,6 +88,15 @@ body {
     border-bottom-left-radius: 8px !important;
 }
 
+ .commentForm {
+    margin: 20px 0 0 0px;
+
+}
+
+.submitReview {
+    margin-top: 43px !important;
+}
+
 main {
     display: block;
 }
