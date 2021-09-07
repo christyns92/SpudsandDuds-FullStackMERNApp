@@ -74,6 +74,10 @@ body {
     background: #000000;
 }
 
+.searchContainer {
+    margin: 5px !important;
+}
+
 main {
     display: block;
 }
@@ -84,7 +88,9 @@ header {
     background-color: none;
 }
 
-
+.movieTitle {
+    padding: 0 !important;
+}
 /* h1 {
     font-size: 2em;
     margin: 0.67em 0;

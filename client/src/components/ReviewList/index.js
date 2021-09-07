@@ -101,7 +101,7 @@ const ReviewList = ({
       {post &&
         post.map((review) => (
           <div key={review._id} className="mx-auto card mb-4 row reviewListContainer" >
-             
+
             <div className="col-lg-4 col-md-12 posterContainer bg-primary">
               <img
                 alt={review.movieTitle}
@@ -110,49 +110,52 @@ const ReviewList = ({
               />
             </div>
             <div className="col-lg-8 col-md-12 reviewContainer bg-primary">
-            
 
 
-              <h4  
+
+              <h4
                 className="card-header bg-primary text-light p-2 text-align-left"
               >
                 {showUsername ? (
                   <div>
+                    <div className="row">
 
-                  <div className="row">
-                  <Link
-                    className="text-light col-lg-4 col-md-12"
-                    to={`/profiles/${review.reviewAuthor}`}
-                  ><h3 className="">
-                    {review.reviewAuthor}
-                  </h3></Link>
-                  <br/>
-                  <h6> reviewed</h6>
+                      <Link
+                        className="text-light col-lg-4"
+                        to={`/profiles/${review.reviewAuthor}`}
+                      ><h3 className="movieTitle">
+                          {review.reviewAuthor}
 
-                  <div className="col-lg-8 reviewList potato-rating text-align-right">
-                {[...Array(5)].map((potato, index) => {
-                  index += 1;
-                  return (
-                    <button
-                      type="button"
-                      key={index}
-                      className={index <= (review.potatoRating) ? "on" : "off"}
-                    >
-                      <span className="potato">&#129364; </span>
+                        </h3>
+                        <span> reviewed</span>
+                      </Link>
+                      <div className="col-lg-8 reviewList potato-rating text-align-right">
+                        {[...Array(5)].map((potato, index) => {
+                          index += 1;
+                          return (
+                            <button
+                              type="button"
+                              key={index}
+                              className={index <= (review.potatoRating) ? "on" : "off"}
+                            >
+                              <span className="potato">&#129364; </span>
 
-                    </button>
-                  );
-                })}
-              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                    </div>
+                    <div >
 
 
-                  <h3 className="col-md-12 text-info">
-                  {review.movieTitle}
-                  </h3>
+
+                    </div>
+                    <h2 className="col-md-12 text-info movieTitle">
+                      {review.movieTitle}
+                    </h2>
                   </div>
 
-                  </div>
-                  
                 ) : (
                   <>
                     <span style={{ fontSize: "1rem" }}>
@@ -161,69 +164,68 @@ const ReviewList = ({
                   </>
                 )}
               </h4>
-              
+
               <div>
-              {review.reviewAuthor === user.username ? (
-                <div className="text-align-right">
+                {review.reviewAuthor === user.username ? (
+                  <div className="text-align-right">
 
-                  <button
-                    onClick={() => setEditMode(true)}
-                    type="button"
-                    className="btn btn-info edit-review"
-                  ><EditIcon/></button>
+                    <button
+                      onClick={() => setEditMode(true)}
+                      type="button"
+                      className="btn btn-info edit-review"
+                    ><EditIcon /></button>
 
-                  <button
-                    onClick={(event) => {
-                      removeReviewHandler(event, review._id);
-                    }}
-                    className="btn btn-info delete-review"
-                  ><DeleteIcon/></button>
-                </div>
-              ) : (<div className="hiddenDiv"></div>)}
-            </div>
+                    <button
+                      onClick={(event) => {
+                        removeReviewHandler(event, review._id);
+                      }}
+                      className="btn btn-info delete-review"
+                    ><DeleteIcon /></button>
+                  </div>
+                ) : (<div className="hiddenDiv"></div>)}
+              </div>
 
               <div >
-              {review.reviewAuthor === user.username && editMode ? (
-                <div className="card-body bg-primary p-2 theMovieRundown">
-                  <p
-                    style={styles.editText}
-                    contentEditable="true"
-                    suppressContentEditableWarning={true}
-                    onBlur={(e) =>
-                      handleEdit(review._id, e.currentTarget.textContent)
-                    }
+                {review.reviewAuthor === user.username && editMode ? (
+                  <div className="card-body bg-primary p-2 theMovieRundown">
+                    <p
+                      style={styles.editText}
+                      contentEditable="true"
+                      suppressContentEditableWarning={true}
+                      onBlur={(e) =>
+                        handleEdit(review._id, e.currentTarget.textContent)
+                      }
+                    >
+                      {review.reviewText}
+                    </p>
+                    <button className="btn btn-info edit-review">Finish Edit</button>
+                  </div>
+                ) : (
+                  <div
+
+                    className="card-body theMovieRundown bg-info p-2"
                   >
-                    {review.reviewText}
-                  </p>
-                  <button className="btn btn-info edit-review">Finish Edit</button>
-                </div>
-              ) : (
-                <div
-                 
-                  className="card-body theMovieRundown bg-info p-2"
-                >
-                  <p>{review.reviewText}</p>
-                </div>
-              )}
-           
-           <h6 className="timeStamp">
-                      on {review.createdAt}
-                    </h6>
-                  
-            
+                    <p>{review.reviewText}</p>
+                  </div>
+                )}
 
+                <h6 className="timeStamp">
+                  on {review.createdAt}
+                </h6>
+
+
+
+              </div>
+              {/* <h3>How was this review?</h3> */}
+              <div className="likeCountContainer text-align-center">
+                <Like />
+              </div>
+
+
+              {/* end of right hand side div */}
             </div>
-        {/* <h3>How was this review?</h3> */}
-        <div className="likeCountContainer text-align-center">
-        <Like />
-        </div> 
-            
-
-            {/* end of right hand side div */}
-            </div>
-
             <Link
-             
+
               className="btn btn-info btn-block theMovieRundown no-radius-tl no-radius-tr"
               to={`/reviews/${review._id}`}
             >
