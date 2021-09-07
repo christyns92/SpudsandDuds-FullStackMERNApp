@@ -2,13 +2,22 @@ import React from 'react'
 import nick from '../images/cage.gif'
 import nicPotato from '../images/nicolascage.jpg'
 
-function Cage(){
-    return(
-    <div id='cage-page'className="text-align-center justify-content-stretch">
-        <h2>You've found the Cage Page</h2>
-    <img className='cage-man' src={nick} alt='Nicholas Cage'/>
-    <img className='nicPotato' src={nicPotato} alt='NicPotato'/>
-    </div>
+function Cage() {
+    return (
+        <div className="text-align-center theMovieRundown">
+            <h2>You've found the Cage Page</h2>
+
+            <div className='text-align-center m-auto row'>
+                <div id='cage-page' className='text-align-center col-12 pb-4'>
+                    <img className='col-12' src={nick} alt='Nicholas Cage' />
+
+                </div>
+                <div className=' text-align-center col-12'>
+                    <img className=' col-12' src={nicPotato} alt='NicPotato' />
+
+                </div>
+            </div>
+        </div>
     )
 }
 export default Cage
