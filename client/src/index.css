@@ -88,9 +88,8 @@ body {
     border-bottom-left-radius: 8px !important;
 }
 
- .commentForm {
+.commentForm {
     margin: 20px 0 0 0px;
-
 }
 
 .submitReview {
@@ -110,6 +109,8 @@ header {
 .movieTitle {
     padding: 0 !important;
 }
+
+
 /* h1 {
     font-size: 2em;
     margin: 0.67em 0;
@@ -149,21 +150,21 @@ abbr[title] {
 
 p {
     color: rgb(236, 225, 220);
-    font-style:italic;
-    margin-top:10px;
-    font-size:20px;
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 .timeStamp {
- margin-right:40px;
- text-align:right;
+    margin-right: 40px;
+    text-align: right;
 }
 
 .likeIcon>svg {
-width: 2em;
-height:2em;
-color: rgb(226, 211, 192);
-margin: 5px;
+    width: 2em;
+    height: 2em;
+    color: rgb(226, 211, 192);
+    margin: 5px;
 }
 
 .hiddenDiv {
@@ -171,8 +172,10 @@ margin: 5px;
 }
 
 .likeCountContainer {
- margin-top:20px;
+    margin-top: 20px;
 }
+
+
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
@@ -196,7 +199,7 @@ strong {
 }
 
 .edit-review {
-    margin:10px !important;
+    margin: 10px !important;
 }
 
 .reviewListContainer {
@@ -208,11 +211,11 @@ strong {
     padding: 10px 0 0 0 !important;
 }
 
-
 .reviewContainer {
     margin: 15px 0 0 0 !important;
     padding: 0 10px 0 10px !important;
 }
+
 .reviewListPoster {
     max-width: 250px;
 }
@@ -223,8 +226,10 @@ strong {
 }
 
 .reviewList .potato {
-   font-size: 40px;
+    font-size: 40px;
 }
+
+
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
@@ -1397,7 +1402,6 @@ a:hover {
     border-radius: 10px;
     border: 2px solid #9d6931 !important;
     background-color: #634729 !important;
-   
     text-align: center;
 }
 
@@ -1410,8 +1414,6 @@ a:hover {
 .card .card-body {
     padding: 0.375rem;
 }
-
-
 
 .card .card-footer {
     border-top: 1px solid #1a1a1a;
@@ -1970,17 +1972,18 @@ label form [type="radio"] {
     .align-content-center-lg {
         align-content: center;
     }
-    #cage-page{
-        width:100vw;
-        height:100vh;
-        background-color:#13709b;
-        color:white;
-        font-weight:700;
+    /* #cage-page {
+        width: 100vw;
+        height: 80vh;
+        background-color: #000000;
+        color: white;
+        font-weight: 700;
     }
-    .cage-man{
-        width:50%;
-        margin:auto;
-    }
+    .cage-man {
+        width: 50%;
+        height: 105%;
+        margin: auto;
+    } */
 }
 
 
