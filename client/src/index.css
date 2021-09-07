@@ -75,7 +75,17 @@ body {
 }
 
 .searchContainer {
-    margin: 5px !important;
+    margin: 5px 0 30px 0 !important;
+    padding: 5px !important;
+}
+
+.singleRevContainer {
+    margin: 0 100px 0 100px !important;
+}
+
+.radius-bottom {
+    border-bottom-right-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
 }
 
 main {
@@ -234,7 +244,8 @@ samp {
 }
 
 .MuiInputBase-root>input {
-    background-color: rgba(30, 52, 72, 0.5) !important;
+    background-color: rgb(71, 59, 45) !important;
+    border-radius: 10px;
 }
 
 .makeStyles-search-8 svg {

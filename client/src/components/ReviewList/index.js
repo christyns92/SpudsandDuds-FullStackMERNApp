@@ -226,7 +226,7 @@ const ReviewList = ({
             </div>
             <Link
 
-              className="btn btn-info btn-block theMovieRundown no-radius-tl no-radius-tr"
+              className="btn btn-info btn-block theMovieRundown radius-bottom no-radius-tl no-radius-tr"
               to={`/reviews/${review._id}`}
             >
               Join the discussion on this review.

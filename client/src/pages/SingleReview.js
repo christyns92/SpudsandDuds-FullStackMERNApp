@@ -24,8 +24,8 @@ const SingleReview = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="text-align-center my-3">
-      <h3 className="text-align-center card-header bg-dark text-light p-2 m-0">
+    <div className="text-align-center theMovieRundown singleRevContainer my-3">
+      <h3 className="text-align-center card-header text-light p-2 m-0">
         {review.reviewAuthor} <br />
         <span style={{ fontSize: "1rem" }}>
           Review for {review.movieTitle} <br />
@@ -54,18 +54,19 @@ const SingleReview = () => {
               })}
             </div>
       </div>
-      <div className="w-50 text-align-center mx-auto bg-light py-4">
-        <blockquote
+      <div className="w-50 text-align-center theMovieRundown m-auto bg-info py-4">
+        <p
           className="p-4"
           style={{
-            fontSize: "1.5rem",
+            fontSize: "1.2rem",
             fontStyle: "italic",
-            border: "2px dotted #1a1a1a",
-            lineHeight: "1.5",
+            border: "2px solid #7f5539",
+            borderRadius: "10px",
+            lineHeight: "1.4"
           }}
         >
           "{review.reviewText}"
-        </blockquote>
+        </p>
       </div>
 
       <div className="my-5">
