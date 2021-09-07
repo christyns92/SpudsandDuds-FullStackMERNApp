@@ -77,11 +77,11 @@ const ReviewForm = (props) => {
       <br></br>
       {Auth.loggedIn() ? (
         
-      <div className="reviewContainer">
+      <div className="reviewContainer text-align-center">
       <h3>Was this movie a Spud or Dud?</h3>
       <div className="row">
         <br></br>
-      <div className="potato-rating">
+      <div className="mx-auto potato-rating">
       {[...Array(5)].map((potato, index) => {
         index += 1;
         return (
@@ -100,7 +100,7 @@ const ReviewForm = (props) => {
     </div>
       </div>
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            className="flex-row justify-center justify-space-between-md"
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9 no-padding">

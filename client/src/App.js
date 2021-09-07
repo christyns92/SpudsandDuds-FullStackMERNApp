@@ -68,7 +68,7 @@ function App() {
             <Route exact path="/reviews/:reviewId">
               <SingleReview />
             </Route>
-            <Route path="*">
+            <Route path="/cage">
               <Cage/>
             </Route>
           </div>

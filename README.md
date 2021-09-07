@@ -1,5 +1,4 @@
 # SpudsandDuds-FullStackMERNApp
-<br>
 Spuds and Duds: a Social Movie Review Application<br><br>
 Link to live deployed app: https://spudsandduds.herokuapp.com/
 
