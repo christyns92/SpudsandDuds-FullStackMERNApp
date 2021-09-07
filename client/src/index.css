@@ -1984,6 +1984,10 @@ label form [type="radio"] {
         height: 105%;
         margin: auto;
     } */
+    .nicPotato {
+        width: 50%;
+        height: 80%;
+    }
 }
 
 
