@@ -7,9 +7,9 @@ Having a place where you can share your thoughts on a movie is every movie buffs
 
 # Purpose
 Spuds and Duds gives you the chance to select from a database of movies to review and post for other to see.
-<br>
+<br><br>
 Our motivation for developing this app is to give a cinephile a community to share their opinions on movies and interact with others with the same passion. 
-<br>
+<br><br>
 As a user, you will be able to search a movie that gives a small description and then be able to post, edit, or delete a review. you can also comment on other reviews that are posted on the feed. 
 
 # Wireframe development
