@@ -103,7 +103,7 @@ const ReviewForm = (props) => {
             className="flex-row justify-center justify-space-between-md"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9 no-padding">
+            <div className="col-lg-10 commentForm no-padding">
               <textarea
                 name="reviewText"
                 placeholder="my Spud or Dud review..."
@@ -114,7 +114,7 @@ const ReviewForm = (props) => {
               ></textarea>
             </div>
 
-            <div className="col-12 col-lg-3">
+            <div className="col-lg-2 submitReview ">
               <button className="btn btn-info py-3" type="submit">Submit
               </button>
             </div>
