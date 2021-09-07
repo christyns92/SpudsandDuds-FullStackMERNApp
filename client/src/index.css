@@ -1944,6 +1944,17 @@ label form [type="radio"] {
     .align-content-center-lg {
         align-content: center;
     }
+    #cage-page{
+        width:100vw;
+        height:100vh;
+        background-color:#13709b;
+        color:white;
+        font-weight:700;
+    }
+    .cage-man{
+        width:50%;
+        margin:auto;
+    }
 }
 
 

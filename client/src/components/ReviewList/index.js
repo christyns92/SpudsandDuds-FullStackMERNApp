@@ -125,7 +125,9 @@ const ReviewList = ({
                     to={`/profiles/${review.reviewAuthor}`}
                   ><h3 className="">
                     {review.reviewAuthor}
-                  <h6> reviewed</h6></h3></Link>
+                  </h3></Link>
+                  <br/>
+                  <h6> reviewed</h6>
 
                   <div className="col-lg-8 reviewList potato-rating text-align-right">
                 {[...Array(5)].map((potato, index) => {
@@ -219,8 +221,6 @@ const ReviewList = ({
 
             {/* end of right hand side div */}
             </div>
-
-            <Like reviewId={review._id} />
 
             <Link
              
