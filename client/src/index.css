@@ -754,7 +754,13 @@ a:hover {
     margin: auto !important;
 }
 
-
+.cage {
+    max-width: 500px;
+}
+.cageContainer {
+    max-width: 700px;
+    margin:auto;
+}
 /* Margin-bottom */
 
 .mb-0 {
