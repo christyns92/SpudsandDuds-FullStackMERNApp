@@ -63,7 +63,8 @@ export default function SingleLineImageList() {
   };
 
   return (
-    <div className={(classes.root, "topMovies")}>
+    <div className="container">
+    <div className={(classes.root, "topMovies theMovieRundown col-12 col-md-10 mb-3 p-3")}>
       <h4>Today's Popular Movies (TMDB)</h4>
       <ImageList className={classes.imageList} cols={5} rowHeight={275}>
         {data.map((movie) => (
@@ -90,6 +91,7 @@ export default function SingleLineImageList() {
           </ImageListItem>
         ))}
       </ImageList>
+    </div>
     </div>
   );
 }

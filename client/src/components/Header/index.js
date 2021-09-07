@@ -26,7 +26,7 @@ const Header = () => {
       <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/">
+              <Link className="btn btn-lg btn-light m-2" to="/">
                 Home
               </Link>
               <Link className="btn btn-lg btn-info m-2" to="/me">
