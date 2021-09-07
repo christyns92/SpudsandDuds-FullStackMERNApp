@@ -91,17 +91,19 @@ const UserReviewList = ({
                         to={`/profiles/${review.reviewAuthor}`}
                       >
                         {review.reviewAuthor} <br />
-                        <span style={{ fontSize: "1rem" }}>
+                        <h3 >
                           Review for {review.movieTitle} <br />
-                          posted on {review.createdAt}
-                        </span>
+                          
+                        </h3>
+                        <p> posted on {review.createdAt}</p>
                       </Link>
                     ) : (
                       <>
-                        <span style={{ fontSize: "1rem" }}>
+                        <h3 >
                           Review for {review.movieTitle} <br />
-                          posted on {review.createdAt}
-                        </span>
+                         
+                        </h3>
+                        <p> posted on {review.createdAt}</p>
                       </>
                     )}
                   </h4>
@@ -141,7 +143,7 @@ const UserReviewList = ({
                       >
                         {review.reviewText}
                       </p>
-                      <button>Finish Edit</button>
+                      <button className="btn btn-info edit-review">Finish Edit</button>
                     </div>
                   ) : (
                     <div className="card-body bg-info p-2">
@@ -151,7 +153,7 @@ const UserReviewList = ({
                   <button
                     onClick={() => setEditMode(true)}
                     type="button"
-                    className="btn btn-default edit-review"
+                    className="btn btn-info edit-review"
                   >
                     Edit
                   </button>
@@ -159,13 +161,13 @@ const UserReviewList = ({
                     onClick={(event) => {
                       removeReviewHandler(event, review._id);
                     }}
-                    className="btn btn-default delete-review"
+                    className="btn btn-info delete-review"
                   >
                     Delete
                   </button>
                   <Link
                     style={styles.isRounded}
-                    className="btn btn-primary btn-block btn-squared"
+                    className="btn btn-info btn-block theMovieRundown radius-bottom no-radius-tl no-radius-tr"
                     to={`/reviews/${review._id}`}
                   >
                     Join the discussion on this review.

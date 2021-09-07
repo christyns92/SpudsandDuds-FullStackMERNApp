@@ -45,14 +45,7 @@ const CommentForm = ({ reviewId }) => {
 
       {Auth.loggedIn() ? (
         <>
-          <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
-          >
-            Character Count: {characterCount}/280
-            {error && <span className="ml-2">{error.message}</span>}
-          </p>
+         
           <form
             className="mx-auto w-75 flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
