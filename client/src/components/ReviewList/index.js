@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { REMOVE_REVIEW } from "../../utils/mutations";
 import { EDIT_REVIEW } from "../../utils/mutations";
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from "@material-ui/icons/Edit";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
-import Like from "../Like"
+import Like from "../Like";
 
 const ReviewList = ({
   reviews,
@@ -95,8 +95,10 @@ const ReviewList = ({
       {showTitle && <h3 className="text-align-left">{title}</h3>}
       {post &&
         post.map((review) => (
-          <div key={review._id} className="mx-auto card mb-4 row reviewListContainer" >
-
+          <div
+            key={review._id}
+            className="mx-auto card mb-4 row reviewListContainer"
+          >
             <div className="col-lg-4 col-md-12 posterContainer bg-primary">
               <img
                 alt={review.movieTitle}
@@ -105,23 +107,15 @@ const ReviewList = ({
               />
             </div>
             <div className="col-lg-8 col-md-12 reviewContainer bg-primary">
-
-
-
-              <h4
-                className="card-header bg-primary text-light p-2 text-align-left"
-              >
+              <h4 className="card-header bg-primary text-light p-2 text-align-left">
                 {showUsername ? (
                   <div>
                     <div className="row">
-
                       <Link
                         className="text-light col-lg-4"
                         to={`/profiles/${review.reviewAuthor}`}
-                      ><h3 className="movieTitle">
-                          {review.reviewAuthor}
-
-                        </h3>
+                      >
+                        <h3 className="movieTitle">{review.reviewAuthor}</h3>
                         <span> reviewed</span>
                       </Link>
                       <div className="col-lg-8 reviewList potato-rating text-align-right">
@@ -131,26 +125,21 @@ const ReviewList = ({
                             <button
                               type="button"
                               key={index}
-                              className={index <= (review.potatoRating) ? "on" : "off"}
+                              className={
+                                index <= review.potatoRating ? "on" : "off"
+                              }
                             >
                               <span className="potato">&#129364; </span>
-
                             </button>
                           );
                         })}
                       </div>
-
                     </div>
-                    <div >
-
-
-
-                    </div>
+                    <div></div>
                     <h2 className="col-md-12 text-info movieTitle">
                       {review.movieTitle}
                     </h2>
                   </div>
-
                 ) : (
                   <>
                     <span style={{ fontSize: "1rem" }}>
@@ -163,24 +152,29 @@ const ReviewList = ({
               <div>
                 {review.reviewAuthor === user.username ? (
                   <div className="text-align-right">
-
                     <button
                       onClick={() => setEditMode(true)}
                       type="button"
                       className="btn btn-info edit-review"
-                    ><EditIcon /></button>
+                    >
+                      <EditIcon />
+                    </button>
 
                     <button
                       onClick={(event) => {
                         removeReviewHandler(event, review._id);
                       }}
                       className="btn btn-info delete-review"
-                    ><DeleteIcon /></button>
+                    >
+                      <DeleteIcon />
+                    </button>
                   </div>
-                ) : (<div className="hiddenDiv"></div>)}
+                ) : (
+                  <div className="hiddenDiv"></div>
+                )}
               </div>
 
-              <div >
+              <div>
                 {review.reviewAuthor === user.username && editMode ? (
                   <div className="card-body bg-primary p-2 theMovieRundown">
                     <p
@@ -193,34 +187,26 @@ const ReviewList = ({
                     >
                       {review.reviewText}
                     </p>
-                    <button className="btn btn-info edit-review">Finish Edit</button>
+                    <button className="btn btn-info edit-review">
+                      Finish Edit
+                    </button>
                   </div>
                 ) : (
-                  <div
-
-                    className="card-body theMovieRundown bg-info p-2"
-                  >
+                  <div className="card-body theMovieRundown bg-info p-2">
                     <p>{review.reviewText}</p>
                   </div>
                 )}
 
-                <h6 className="timeStamp">
-                  on {review.createdAt}
-                </h6>
-
-
-
+                <h6 className="timeStamp">on {review.createdAt}</h6>
               </div>
               {/* <h3>How was this review?</h3> */}
               <div className="likeCountContainer text-align-center">
-                <Like />
+                <Like reviewId={review._id} />
               </div>
-
 
               {/* end of right hand side div */}
             </div>
             <Link
-
               className="btn btn-info btn-block theMovieRundown radius-bottom no-radius-tl no-radius-tr"
               to={`/reviews/${review._id}`}
             >
