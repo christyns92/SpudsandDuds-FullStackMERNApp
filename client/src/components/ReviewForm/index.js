@@ -46,8 +46,8 @@ const ReviewForm = (props) => {
           reviewText,
           reviewAuthor: Auth.getProfile().data.username,
           movieTitle: movieTitle,
-          movieImg: movieImg, 
-          potatoRating: rating
+          movieImg: movieImg,
+          potatoRating: rating,
         },
       });
 
@@ -59,7 +59,7 @@ const ReviewForm = (props) => {
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;  
+    const { name, value } = event.target;
 
     if (name === "reviewText" && value.length <= 280) {
       setReviewText(value);
@@ -70,35 +70,32 @@ const ReviewForm = (props) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
 
-
   return (
     <div>
-
       <br></br>
       {Auth.loggedIn() ? (
-        
-      <div className="reviewContainer text-align-center">
-      <h3>Was this movie a Spud or Dud?</h3>
-      <div className="row">
-        <br></br>
-      <div className="mx-auto potato-rating">
-      {[...Array(5)].map((potato, index) => {
-        index += 1;
-        return (
-          <button
-            type="button"
-            key={index}
-            className={index <= (hover || rating) ? "on" : "off"}
-            onClick={() => setRating(index)}
-            onMouseEnter={() => setHover(index)}
-            onMouseLeave={() => setHover(rating)}
-          >
-            <span className="potato">&#129364;</span>
-          </button>
-        );
-      })}
-    </div>
-      </div>
+        <div className="reviewContainer text-align-center">
+          <h3>Was this movie a Spud or Dud?</h3>
+          <div className="row">
+            <br></br>
+            <div className="mx-auto potato-rating">
+              {[...Array(5)].map((potato, index) => {
+                index += 1;
+                return (
+                  <button
+                    type="button"
+                    key={index}
+                    className={index <= (hover || rating) ? "on" : "off"}
+                    onClick={() => setRating(index)}
+                    onMouseEnter={() => setHover(index)}
+                    onMouseLeave={() => setHover(rating)}
+                  >
+                    <span className="potato">&#129364;</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
           <form
             className="flex-row justify-center justify-space-between-md"
             onSubmit={handleFormSubmit}
@@ -115,7 +112,8 @@ const ReviewForm = (props) => {
             </div>
 
             <div className="col-lg-2 submitReview ">
-              <button className="btn btn-info py-3" type="submit">Submit
+              <button className="btn btn-info py-3" type="submit">
+                Submit
               </button>
             </div>
             {error && (
@@ -124,7 +122,7 @@ const ReviewForm = (props) => {
               </div>
             )}
           </form>
-          </div>
+        </div>
       ) : (
         <p>
           You need to be logged in to share your reviews. Please{" "}

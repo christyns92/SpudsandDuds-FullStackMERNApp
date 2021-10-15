@@ -7,7 +7,6 @@ import { EDIT_REVIEW } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 
-
 const UserReviewList = ({
   reviews,
   title,
@@ -83,25 +82,30 @@ const UserReviewList = ({
         <>
           {post
             ? post.map((review) => (
-                <div key={review._id} className="mx-auto card mb-3" style={styles.isRounded}>
-                  <h4 style={styles.isRounded} className="card-header bg-primary text-light p-2 m-0">
+                <div
+                  key={review._id}
+                  className="mx-auto card mb-3"
+                  style={styles.isRounded}
+                >
+                  <h4
+                    style={styles.isRounded}
+                    className="card-header bg-primary text-light p-2 m-0"
+                  >
                     {showUsername ? (
                       <Link
                         className="text-light"
                         to={`/profiles/${review.reviewAuthor}`}
                       >
                         {review.reviewAuthor} <br />
-                        <h3 >
+                        <h3>
                           Review for {review.movieTitle} <br />
-                          
                         </h3>
                         <p> posted on {review.createdAt}</p>
                       </Link>
                     ) : (
                       <>
-                        <h3 >
+                        <h3>
                           Review for {review.movieTitle} <br />
-                         
                         </h3>
                         <p> posted on {review.createdAt}</p>
                       </>
@@ -132,7 +136,10 @@ const UserReviewList = ({
                     </div>
                   </div>
                   {editMode ? (
-                    <div style={styles.isRounded} className="card-body bg-info p-2">
+                    <div
+                      style={styles.isRounded}
+                      className="card-body bg-info p-2"
+                    >
                       <p
                         style={styles.editText}
                         contentEditable="true"
@@ -143,7 +150,9 @@ const UserReviewList = ({
                       >
                         {review.reviewText}
                       </p>
-                      <button className="btn btn-info edit-review">Finish Edit</button>
+                      <button className="btn btn-info edit-review">
+                        Finish Edit
+                      </button>
                     </div>
                   ) : (
                     <div className="card-body bg-info p-2">

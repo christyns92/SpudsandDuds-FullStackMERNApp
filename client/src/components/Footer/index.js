@@ -1,6 +1,6 @@
-import React from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
-import PotatoRating from '../PotatoRating/PotatoRating';
+import React from "react";
+import { useLocation, useHistory } from "react-router-dom";
+import PotatoRating from "../PotatoRating/PotatoRating";
 
 const Footer = () => {
   const location = useLocation();
@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="w-100 mt-auto bg-secondary p-4">
       <div className="container text-center mb-5">
-        {location.pathname !== '/' && (
+        {location.pathname !== "/" && (
           <button
             className="btn btn-dark mb-3"
             onClick={() => history.goBack()}
@@ -17,9 +17,9 @@ const Footer = () => {
           </button>
         )}
         <h4>Rate Spuds & Duds</h4>
-        <PotatoRating/>
+        <PotatoRating />
         <h4>
-          Made with{' '}
+          Made with{" "}
           <span
             className="emoji"
             role="img"
@@ -27,7 +27,7 @@ const Footer = () => {
             aria-hidden="false"
           >
             ❤️
-          </span>{' '}
+          </span>{" "}
           by the Spuds & Duds team.
         </h4>
       </div>

@@ -61,34 +61,38 @@ export default function SingleLineImageList() {
 
   return (
     <div className="container">
-    <div className={(classes.root, "topMovies theMovieRundown col-12 col-md-10 mb-3 p-3")}>
-      <h4>Today's Popular Movies (TMDB)</h4>
-      <ImageList className={classes.imageList} cols={5} rowHeight={275}>
-        {data.map((movie) => (
-          <ImageListItem key={movie.poster_path}>
-            <img
-              src={getImage(movie.poster_path)}
-              alt={movie.original_title}
-              value={movie.original_title}
-              onClick={(e) => {
-                sendTitle(movie.original_title);
-              }}
-            />
-            <ImageListItemBar
-              classes={{
-                root: classes.titleBar,
-                title: classes.title,
-              }}
-              actionIcon={
-                <IconButton aria-label={`star ${movie.original_title}`}>
-                  <FavoriteIcon className={classes.title} />
-                </IconButton>
-              }
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
-    </div>
+      <div
+        className={
+          (classes.root, "topMovies theMovieRundown col-12 col-md-10 mb-3 p-3")
+        }
+      >
+        <h4>Today's Popular Movies (TMDB)</h4>
+        <ImageList className={classes.imageList} cols={5} rowHeight={275}>
+          {data.map((movie) => (
+            <ImageListItem key={movie.poster_path}>
+              <img
+                src={getImage(movie.poster_path)}
+                alt={movie.original_title}
+                value={movie.original_title}
+                onClick={(e) => {
+                  sendTitle(movie.original_title);
+                }}
+              />
+              <ImageListItemBar
+                classes={{
+                  root: classes.titleBar,
+                  title: classes.title,
+                }}
+                actionIcon={
+                  <IconButton aria-label={`star ${movie.original_title}`}>
+                    <FavoriteIcon className={classes.title} />
+                  </IconButton>
+                }
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </div>
     </div>
   );
 }
